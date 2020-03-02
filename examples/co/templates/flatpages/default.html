@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block bredcrumbs %} {% endblock %}
+    {% block header %}
+        Home page
+    {% endblock %}
+
+    {% block content %}
+        <h1>{{ flatpage.title }}</h1>
+         <div class="well">
+           {{ flatpage.content }}
+        </div>
+    {% endblock %}
+
+    {% block footer %}
+        <h3>This is footer</h3>
+    {% endblock %}

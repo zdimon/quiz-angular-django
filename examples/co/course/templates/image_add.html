@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load compress %}
+{% load staticfiles %}
+
+
+
+
+
+{% load i18n %}
+
+
+{% block bredcrumbs %}
+                    <ul class="pull-right breadcrumb">
+                        <li class="active">{% trans 'Edit lesson' %}</li>
+
+                    </ul>
+
+{% endblock %}
+
+{% block title %} Online courses {% endblock %}
+
+{% block content %}
+
+<div class="col-md-3">
+
+<div id="owner_cam"></div>
+<a href="#" id="turn_owner_cam_on"> Turn my cam on </a>
+
+
+    <form action="" method="POST" enctype="multipart/form-data">
+       
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save"/>
+    </form>
+        
+
+
+</div>
+<div class="col-md-9">
+
+    <h3> Lesson # {{lessom.id}} {{lesson.name}} </h3>
+
+
+</div>
+
+     
+
+
+{% endblock %}
+

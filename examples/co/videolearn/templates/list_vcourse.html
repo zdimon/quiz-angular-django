@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load thumbnail %}
+{% load staticfiles %}
+       
+{% block js %}
+    {{ block.super }}
+    {{ form.media }}
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+
+{% endblock %}
+
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block content %}
+
+
+
+
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{% trans 'Show video' %}</h4>
+            </div>
+            <div class="modal-body" id="show_test_div">
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12">
+
+   <h2>{% trans 'My video courses' %}</h2>
+
+    <div class="well">
+      
+         
+       
+
+                
+
+
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th width="10%">{% trans 'Course' %}</th>
+                        <th>{% trans 'Lessons' %}</th>
+              
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in courses %}
+                    <tr>
+                        <td>
+
+                            {{ c.thumb }}
+                            <p>{{ c.name }}</p>
+                            <p>{% trans 'Published' %}: {{ c.is_active }}</p>
+                            <a class="btn btn-warning" onclick="return confirm('{% trans 'Are u sure?' %}') ? true : false;" href="{% url 'delete-vcourse' id=c.id %}">{% trans 'Delete' %}</a>
+
+                        </td>
+
+                        <td>
+
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>{% trans 'Screenshot' %}</th>
+                                            <th>{% trans 'Name' %}</th>
+                                            <th>{% trans 'Duration' %}</th>
+                                            <th>{% trans 'Price' %}</th>
+                                            <th>{% trans 'Show' %}</th>
+                                        </tr>                                        
+                                    </thead>
+                                    {% for l in c.vlesson_set.all %}
+                                        <tr>
+                                            <td> <a href="{% url 'vcourse-preview' id=l.id %}" target=_blank>{{ l.screenshot }} </a></td>
+                                            <td> {{ l.name }} </td>
+                                            <td> {{ l.duration }} </td>
+                                            <td> {{ l.price_str }} </td>
+                                            <td>
+                                                <a class="btn btn-primary pull-left" href="{% url 'edit-lecture' id=l.id course_id=c.id %}">
+                                                 <span class="glyphicon glyphicon-pencil"></span>
+                                                 {% trans 'Edit' %} </a> 
+                                                <!--<a href="#" class="test_show" data-id="{{ c.id }}"> {% trans 'Show' %} </a>-->
+                                                {% if l.is_converted %}
+                                                    <a class="btn btn-primary pull-right" href="{% url 'vcourse-preview' id=l.id %}" target=_blank>
+                                                    <span class="glyphicon glyphicon-eye-open"></span>
+ {% trans 'Preview' %} </a>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            
+ 
+
+<a class="btn btn-primary" href="{% url 'add-lecture' course_id=c.id %}">{% trans 'Add lecture' %}</a> 
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+
+         
+         
+                
+    </div>           
+
+</div>
+
+     
+<a class="btn btn-success" href="{% url 'create-vcourse' %}">{% trans 'Create new video course' %}</a> 
+
+
+<!--
+<div id="flashContent" class="flashWrapp">
+      
+       
+     <embed
+       src="/static/Chat.swf?v=222"
+       name="owner_cam_obj" 
+       allowScriptAccess="always"
+       width="800" height="600" 
+       scale="exactfit"
+       type="application/x-shockwave-flash"
+       flashvars = "codecOn=true&ww=800&hh=600&fps=20&streamName=test&url=rtmp://localhost/vod&micOn=true&type=in"
+       pluginspage="http://www.macromedia.com/go/getflashplayer"> </embed>
+
+            
+    </object>
+
+</div>
+-->
+
+
+
+
+{% endblock %}
+

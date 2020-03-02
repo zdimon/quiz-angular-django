@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load thumbnail %}
+{% load staticfiles %}
+       
+
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block content %}
+
+<h2> {{ course.name }} </h2>
+
+<div class="well">
+
+   <div style="float: left; inline-block; width: 150px; height: 150px;">{{ course.thumb }}</div>
+
+   {{ course.desc | safe }}
+
+    <div style="clear: both" > </div>
+
+
+    <h3> {% trans 'Lectures' %} </h3>
+
+
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>{% trans 'Name' %}</th>
+                        <th>{% trans 'Time' %}</th>
+                        <th>{% trans 'Price' %}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for l in lessons %}
+
+                            <tr>
+                                <td>{{ l.name }}</td>
+                                <td>{{ l.duration }}</td>
+                                <td>{{ l.price_str }}</td>
+                                <td>
+
+                                    {% include "buy_link.html" with l=l %}
+
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                </tbody>
+    
+        </table>
+    
+
+</div>
+
+
+
+
+{% endblock %}
+

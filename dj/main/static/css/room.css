@@ -1,0 +1,270 @@
+
+
+.chatperson{
+    display: block;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 4px;
+  }
+  .chatperson:hover{
+    text-decoration: none;
+    border-bottom: 1px solid orange;
+  }
+  .namechat {
+      display: inline-block;
+      vertical-align: middle;
+  }
+  
+  
+  .chatperson .pname{
+    font-size: 18px;
+    padding-left: 5px;
+  }
+  .chatperson .lastmsg{
+    font-size: 12px;
+    padding-left: 5px;
+    color: #ccc;
+  }
+
+  .chatperson .score{
+    width: 70px;
+    height: 40px;
+    float: right;
+    font-size: 30px;
+    margin-left: 30px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    text-align: center;
+    color: green;
+  }
+
+
+
+.chatbody {
+    height: 400px;
+    overflow: auto;
+}
+
+.participants {
+    height: 456px;
+    overflow: auto;   
+}
+
+.navbar-nav p {
+
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    margin: 0;
+    padding-left: 10px
+}
+
+.navbar-nav a.btn {
+    margin-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 0;
+}
+
+.navbar-nav a.btn p {
+
+    padding-top: 5px;
+    padding-bottom: 6px;
+    font-size: 16px;
+    margin: 0;
+    padding-left: 0x
+    display: block;
+}
+
+.chatbody {
+    background: white;
+    margin-bottom: 10px;
+    border-bottom: 2px solid silver;
+    border-top: 2px solid silver;
+}
+
+.chat_box p.chat_text {
+    font-size: 20px;
+}
+
+
+.chat_box p.true {
+    color: green;
+}
+
+.chat_box p.false {
+    color: red;
+}
+
+.participants a {
+   border-radius: 8px;
+}
+
+.participants a.selected {
+    background: yellow;
+
+}
+
+.current_question p{
+    font-size: 1em;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.chat_message {
+    padding: 5px 5px 5px 5px;
+}
+
+.chat_message p {
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.chat_message span.username {
+    font-weight: bold;
+}
+.chat_message span.time {
+    float: right;
+}
+
+.odd {
+    background: #EEEEEE;
+}
+
+.chatbody .alert {
+    padding: 3px 3px 3px 15px;
+    background: yellowgreen;
+    text-align: center;
+}
+
+
+.pagination {
+    margin: 11px 0 0; }
+  
+  .pagination > li > a, .pagination > li > span {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 6px;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #333333; }
+  
+  .pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+    background-color: transparent;
+    border-color: transparent;
+    color: #107fc9; }
+  
+  .pagination a.next, .pagination a.previous {
+    padding: 2px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #107fc9;
+    color: #fff; }
+  
+  .pagination a.next:hover, .pagination a.next:focus, .pagination a.previous:hover, .pagination a.previous:focus {
+    background-color: #333333;
+    border-color: #333333;
+    color: #fff; }
+  
+  .pagination a.previous {
+    margin-right: 4px; }
+  
+  .pagination a.next {
+    margin-left: 4px; }
+
+    .float-right {
+        float: right;
+      }
+      
+      .float-left {
+        float: left;
+      }
+      
+
+/*
+ul.nav-top-right {
+    display: table;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 41px;
+}
+
+ul.nav-top-right li {
+    display: table-cell;
+    height: 30px;
+    text-align: center;
+
+}
+
+ul.nav-top-right li.active {
+    border-bottom: white;
+
+}
+
+
+ul.nav-top-right li:nth-last-child(3) {
+    width: 20%;
+    min-width: 30px;
+}
+*/
+
+.edit-question textarea {
+    height: 150px;
+    font-size: 18px;
+}
+
+.question-item {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-bottom: 1px dotted silver;
+}
+
+.page-pagination {
+    padding-bottom: 20px;
+}
+
+.filter li {
+    list-style: none;
+}
+
+.filter li a.active {
+    color: red;
+}
+
+a {
+    cursor: pointer;
+}
+
+.lang_panel {
+    padding: 10px;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#exTab2 {
+    padding-top: 5px;
+}
+
+
+p.mainpage {
+    font-size: 18px;
+}
+
+.mainpage p{
+    font-size: 16px !important;
+    text-align: justify;
+}
+
+.chatbody div.alert {
+    font-size: 16px;
+    font-weight: bold;
+}

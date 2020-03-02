@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="lang_panel">
+        <a (click)="toggleLang('ru')" [class.bold]="lang_ru">Russian</a> <input  type="checkbox" [(ngModel)]='lang_ru'> 
+        <a (click)="toggleLang('en')"  [class.bold]="lang_en">English</a> <input type="checkbox" [(ngModel)]='lang_en'>
+    </div>
+    <div class="chatbody" #scrollMe>
+    
+
+       
+          
+
+        <div class="chat_message" *ngFor="let m of messages; let odd = odd" [class.odd]="odd">
+            <p><span class="username">{{ m.username }}</span> <!--<span class="time">{{ m.created_at }}</span>--></p>
+            <div class="chat_text {{ m.is_right }}">
+                <span *ngIf="m.is_service==false">
+                    <span *ngIf="m.is_right==false"><img src="/static/image/f.png" /></span>
+                    <span *ngIf="m.is_right==true"><img src="/static/image/t.png" /></span>
+                </span>
+                <span [innerHTML]="m.message"></span>
+                <span *ngIf="lang_ru" [innerHTML]="m.question_ru"></span>
+                <span *ngIf="lang_en" [innerHTML]="m.question_en"></span>
+            </div>
+        </div>
+    </div>    
+
+    <div class="row">
+      
+            
+      
+
+        <div>
+            <div class="col-xs-8" >
+                <span *ngIf="is_authenticated=='false'" >{{ i18n?.your_name }}:</span><input *ngIf="is_authenticated=='false'" [(ngModel)]='guest_name'  type="text" value="guest" class="form-control"/>
+                <p *ngIf="is_authenticated=='false'"></p>
+                <input  #inputBox (keypress)="keyPressHandler($event.keyCode)" type="text" [(ngModel)]='text_message' placeholder="type" class="form-control" required autofocus />
+                <div class="lastmsg">{{ i18n?.enter_help }}</div>
+            </div>
+            <div class="col-xs-2" >
+                <button (click)="nextQuestion()" class="btn btn-success">{{ i18n?.next }}</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

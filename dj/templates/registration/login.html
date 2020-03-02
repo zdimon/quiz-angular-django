@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+
+                    {% if form.errors %}
+                    <div class="row">
+                            <div class="alert alert-danger" role="alert">
+                                <span class="fa fa-exclamation" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                {% trans 'Email or password is incorrect!' %}
+                            </div>
+                    </div>   
+                    {% endif %}
+
+
+                    <form class="form-signin" action="{% url 'login' %}" method="post">
+                            <h2 class="form-signin-heading">{% trans 'Please sign in' %}</h2>
+                            {% csrf_token %}
+                            <label for="inputEmail" class="sr-only">{% trans 'Email address' %}</label>
+                            <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                            <br />
+                            <label for="inputPassword" class="sr-only">{% trans 'Password' %}</label>
+                            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <br />
+                            <div style="text-align: center">
+                               {% trans 'Login by' %} <a href="{% url "social:begin" "google-oauth2" %}"><img src="/static/image/google.png" /></a>
+                            </div>                            
+                            <br />
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign in' %}</button>
+                            <a class="btn btn-lg btn-primary btn-block" href="{% url 'register' %}">{% trans 'Sign up' %}</a>
+                    </form>            
+                    <br />
+                    <div style="text-align: center">
+                        <a href="{% url 'password_reset' %}" class="forget-password">{% trans 'Forgot password?' %}</a>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+{% endblock %}

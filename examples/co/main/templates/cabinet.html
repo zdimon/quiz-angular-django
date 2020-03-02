@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load thumbnail %}
+{% load staticfiles %}
+       
+{% block js %}
+    {{ block.super }}
+    {{ form.media }}
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+        <script src="{% static 'js/cabinet.js' %}"></script>
+{% endblock %}
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block content %}
+
+
+<div class="col-md-3">
+     <h2>{% trans 'My profile' %}</h2>
+    <div class="well">
+        <strong>{{ request.user.first_name }} {{ request.user.last_name }}</strong>
+        
+         
+        <div class="form-body">
+            <div class="input-group">
+                <strong>{{ request.user.email }}</strong>
+            </div>
+        </div>
+
+
+        <div class="form-body">
+            <div class="input-group">
+                {% trans 'Phone' %}: <strong>{{ request.user.phone }}</strong>
+            </div>
+        </div>
+
+
+        <div class="form-body">
+            <div class="input-group">
+                {% trans 'About me' %}: <strong>{{ request.user.desc }}</strong>
+            </div>
+        </div>
+        
+        <br />
+
+        <div class="form-body">
+            <div class="input-group">
+                <a title="{{ request.user.user_name }}" href="{% url 'edit_profile' %}" class="btn btn-primary">
+                 {% trans 'Edit profile' %}
+                </a>
+            </div>
+        </div>
+      </div>
+
+    <h2>{% trans 'My account' %}</h2>
+
+    <div class="well">
+        <h4> {{ request.user.account }} {% trans 'UAH' %} </h4>
+    </div>
+
+</div>
+
+
+<div class="col-md-9">
+     <div id="left_course"></div>
+     
+     <div id="left_material"></div>
+
+</div>
+
+     
+
+
+{% endblock %}
+

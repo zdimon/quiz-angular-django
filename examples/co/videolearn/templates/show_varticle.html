@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load thumbnail %}
+{% load staticfiles %}
+       
+{% block js %}
+    {{ block.super }}
+    {{ form.media }}
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+    
+      
+        <h2> {{ article.lesson }} >> {{ article.name }} </h2>
+
+
+<div class="col-md-2"> 
+
+    
+      <h2> {% trans 'Content' %} </h2>
+      <table class="table table-condensed">
+            {% for a in articles %}
+
+                <tr {% if a.id == article.id %} class="active" {% endif %} > <td> <a style="color: #222222; font-size: 16px" href="{{ a.get_absolute_url }}"> {{ a.name }} </a> </td> </tr>
+           
+            {% endfor %}
+      </table>
+
+   
+</div>
+
+<div class="col-md-10">
+
+        <div class="well">
+            <audio id="play" 
+                   oncanplay="myOnCanPlayFunction()"
+                   oncanplaythrough="myOnCanPlayThroughFunction()"
+                   onloadeddata="myOnLoadedData()"
+                   src="{{ article.sound.url }}"
+                   controls>
+                
+            </audio>
+
+
+            <script>
+            function myOnCanPlayFunction() { document.getElementById('play').play() }
+            function myOnCanPlayThroughFunction() {  }
+            function myOnLoadedData() { console.log('Loaded data'); }
+            
+            </script>
+
+           <!-- <button onclick="document.getElementById('play').play();">PLAY</button> -->
+
+           {{ article.desc | safe }}
+
+
+           <div style="clear: both"></div>
+
+       </div>
+
+    </div>
+    
+
+
+
+     
+
+
+{% endblock %}
+

@@ -1,0 +1,11 @@
+.idea
+media/cache
+/media
+*.pyc
+settings/local.py
+db.sqlite3
+co/local.py
+email_plug/*
+db.sqlite3
+celerybeat.pid
+celerybeat-schedule

@@ -1,0 +1,4 @@
+. ./ve/bin/activate; ./dj/manage.py makemessages --ignore ve --locale ru
+. ./ve/bin/activate; ./dj/manage.py makemessages --ignore ve --locale en
+. ./ve/bin/activate; ./dj/manage.py compilemessages --exclude ve --locale en
+. ./ve/bin/activate; ./dj/manage.py compilemessages --exclude ve --locale ru

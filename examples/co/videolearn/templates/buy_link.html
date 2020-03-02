@@ -1,0 +1,10 @@
+{% load i18n %}
+{% if not l.is_byed %}
+  <a class="btn btn-primary pull-right" href="{% url 'vcourse-buy' id=l.id %}"> <span class="glyphicon glyphicon-shopping-cart"> </span> {% trans 'Buy' %} </a>
+
+<a  class="btn btn-success pull-right" href="{% url 'test-buy' id=l.id %}"> <span class="glyphicon glyphicon-eye-open"></span> {% trans 'Test buy' %} </a>
+
+{% else %}
+  <a target="_blank"  class="btn btn-success pull-right" href="{% url 'vcourse-show' id=l.id %}"> <span class="glyphicon glyphicon-eye-open"></span> {% trans 'View' %} </a>  
+
+{% endif %}

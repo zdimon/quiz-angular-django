@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load compress %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block js %}
+    {% compress js %}
+        {{ block.super }}
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+        
+        <script src="{% static 'ajax_upload/js/jquery.iframe-transport.js' %}"></script>
+        <script src="{% static 'ajax_upload/js/ajax-upload-widget.js' %}"></script>
+        <script src="{% static 'js/edit_lesson.js' %}"></script>
+      {{ form_lesson.media }}
+
+    {% endcompress %}
+{% endblock %}
+
+{% block css %}
+
+    <link href="{{ STATIC_URL }}ajax_upload/css/ajax-upload-widget.css" rel="stylesheet" type="text/css"/>
+
+{% endblock %}
+
+{% load i18n %}
+
+
+{% block bredcrumbs %} 
+
+            <!-- BEGIN BREADCRUMBS -->
+            <div class="row breadcrumbs" >
+                <div class="container">
+                    <div class="col-md-3 col-sm-3">
+                        <h1>{% trans 'Edit lesson' %}</h1>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                         
+                        
+                        <div class="div_uploaded_img" id="from_publisher"> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END BREADCRUMBS -->
+
+{% endblock %}
+
+{% block title %} Online courses {% endblock %}
+
+{% block content %}
+<div class="well">
+<div class="col-md-12">
+<form method="post" action="" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h2>{% trans 'Create lesson' %} {% trans 'course' %} {{ course.name }}</h2>
+                
+                <div class="form-body col-md-3">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form_lesson.name.label_tag }}
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                
+                            </span>
+                           {{ form_lesson.name|add_class:"form-control" }}
+                        </div>
+                        <span class="error-block">{{ form_lesson.name.help_text }}</span>
+                        <span class="help-block">{{ form_lesson.name.errors }}</span>
+                    </div>
+
+
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form_lesson.image.label_tag }}
+                        
+                            
+                           {{ form_lesson.image|add_class:"form-control" }}
+                           
+                        
+                        <span class="error-block">{{ form_lesson.image.help_text }}</span>
+                        <span class="help-block">{{ form_lesson.image.errors }}</span>
+                    </div>
+
+                </div>
+                <div class="form-body col-md-9">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form_lesson.desc.label_tag }}
+                        <div class="input-group ckeditor">
+                           
+                           {{ form_lesson.desc|add_class:"form-control" }}
+                           
+                        </div>
+                        <span class="error-block">{{ form_lesson.desc.help_text }}</span>
+                        <span class="help-block">{{ form_lesson.desc.errors }}</span>
+{{ form_lesson.cropping }}
+                    </div>
+
+
+                     
+
+                </div>
+                   
+
+                 {{ form_lesson.owner }} {{ form_lesson.course }}
+                   
+                         
+<button type="submit" class="btn theme-btn float-right" style="float: right" id="registration_save">{% trans 'Save' %}</button>
+
+        </form>
+
+    <div style="clear: both"> </div> 
+        
+</div>
+
+ <div style="clear: both"> </div> 
+
+</div>
+
+
+<div class="col-md-3">
+
+
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        <h2>{% trans 'Add image' %}</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save"/>
+    </form>
+        <script>
+            $(function() {
+                AjaxUploadWidget.autoDiscover();
+            });
+        </script>
+
+ 
+
+
+
+
+</div>
+<div class="col-md-4">
+
+    <a  href="#" onclick="return false" class="btn btn-success" id="move_all_to_incubator">{% trans 'Move all to incubator' %}</a>
+   <a class="btn btn-success red" onclick = "if (! confirm('{% trans 'Sure?' %}')) { return false; }" href="#" id="delete_all_from_events">{% trans 'Delete all' %}</a>
+    <h2> {% trans 'Events' %} </h2>
+    <ul id="event_list">
+        {% for e in events %}
+            {{ e.li_item }}
+        {% endfor %}
+    </ul>
+   
+     
+
+</div>
+
+<div class="col-md-4">
+    <a  href="#" onclick="return false" class="btn btn-success" id="move_all_to_events">{% trans 'Move all to events' %}</a>
+    <a class="btn btn-success red" onclick = "if (! confirm('{% trans 'Sure?' %}')) { return false; }" href="#" id="delete_all_from_incubator">{% trans 'Delete all' %}</a>
+    <h2> {% trans 'Incubator' %} </h2>
+    <ul id="incubator_list"> 
+        {% for i in incubators %}
+            {{ i.li_item }}
+        {% endfor %}
+    </ul>
+  
+    
+</div>     
+
+
+{% endblock %}
+

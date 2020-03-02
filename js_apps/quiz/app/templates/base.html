@@ -1,0 +1,31 @@
+<div id="exTab2" class="container">	
+        <ul class="nav nav-tabs">
+                <li routerLinkActive="active">
+                        <a  href="#" routerLink="/index" >{{i18n?.menu_home}}</a>
+                </li>
+                <li  routerLinkActive="active">
+                        <a href="#" routerLink="/admin">{{i18n?.menu_my_questions}}</a>
+                </li>
+                <li routerLinkActive="active">
+                <a href="#" routerLink="/room">{{i18n?.menu_quiz}}</a>
+                </li>
+                <li></li>
+                <li>
+                <a *ngIf="lang=='en'" href="/ru/quiz/#/index">
+                        Русский
+                </a>
+                <a *ngIf="lang=='ru'" href="/en/quiz/#/index" >
+                        English 
+                </a>                                    
+                </li>
+                <li>
+                        <a style="color: red;" href="/">{{ i18n?.exit }}</a>
+                </li>
+        </ul>
+                
+</div>
+
+<div class="container tab-pane">
+        <router-outlet></router-outlet>
+</div>
+

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+{% load i18n %}
+
+{% block bredcrumbs %} {% endblock %}
+   
+    <!-- Login form -->
+    {% if form.errors %}
+        <h4 style="color: red">Login error!</h4>
+    {% endif %}
+    <ul class='errorlist'>
+        {% for error in form.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="col-md-4 login-signup-page">
+    <form method="post" action="{% url 'login' %}" class="form_class">
+            {% csrf_token %}
+            <h2> Login </h2>
+
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input name="username" type="text" class="form-control" placeholder="login">
+                    </div>
+                    </br>
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" name="password"  class="form-control" placeholder="password">
+
+
+                    </div>
+                     </br>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <button type="submit" class="btn btn-success pull-right">Login</button>
+                        </div>
+                    </div>
+    </form>
+       
+    </div>
+
+   <!-- /Login form -->
+   <div class="col-md-8 login-signup-page">
+     <p>{% trans 'Войти с помощью' %}</p>
+      <a href="{% url "socialauth_begin" "vk-oauth" %}"> <img src="/static/images/vk.jpg" /> </a>
+      <a href="{% url "socialauth_begin" "facebook" %}"> <img src="/static/images/fb.png" /> </a>
+      <a href="{% url "socialauth_begin" "google-oauth2" %}"> <img src="/static/images/google.png" /> </a>
+   </div>
+{% endblock %}

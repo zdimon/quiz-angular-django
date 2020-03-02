@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load thumbnail %}
+{% load staticfiles %}
+       
+{% block js %}
+    {{ block.super }}
+    {{ form.media }}
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+
+{% endblock %}
+
+
+
+
+{% block bredcrumbs %} 
+            <!-- BEGIN BREADCRUMBS -->
+            <div class="row breadcrumbs" >
+                <div class="container">
+                    <div class="col-md-3 col-sm-3">
+                      <h3> {% trans 'Library' %} </h3>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                         
+                        
+                        <div class="div_uploaded_img" id="from_publisher"> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END BREADCRUMBS -->
+
+ {% endblock %}
+
+
+
+{% block content %}
+
+<h2> {% trans 'Lessons' %} </h2>
+
+
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>{% trans 'Name' %}</th>
+                        <th>{% trans 'Time' %}</th>
+                        <th>{% trans 'Price' %}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for l in lessons %}
+
+                            <tr>
+                                <td>{{ l.name }}</td>
+                                <td>{{ l.duration }}</td>
+                                <td>{{ l.price_str }}</td>
+                                <td>
+
+                                    {% include "buy_link.html" with l=l %}
+
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                </tbody>
+    
+        </table>
+
+
+
+{% endblock %}
+

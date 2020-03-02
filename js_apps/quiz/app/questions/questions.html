@@ -1,0 +1,119 @@
+
+<div class="container">
+     
+        <div class="row">
+                <div class="col-md-8">
+                                <div class="row">
+                                                <div class="col-md-8">
+                                                        <h3>{{i18n?.menu_my_questions}}</h3>
+                                                </div>
+                                                <div class="col-md-4">
+                                                        <button 
+                                                        *ngIf="is_filtered"
+                                                        (click)="clearFilter()" 
+                                                        type="button" 
+                                                        class="btn btn-danger">
+                                                                {{i18n?.clear_filter}}
+                                                        </button>
+                                                </div>   
+                                        </div>                       
+                        <div class="alert alert-danger text-center" *ngIf="pager.count == 0">
+                                        {{i18n?.no_data}}
+                        </div>
+
+                        <div class="float-left" *ngIf="!create_question">
+                                <button class="btn btn-danger btn-block" (click)="newQuestion()" >
+                                                {{ i18n?.create_question }}
+                                </button>                
+                        </div>        
+
+
+
+                        <div *ngIf="create_question">
+                                <edit-question-form
+                                        [obj]="new_obj"
+                                        (submitEvent)="submitForm($event)"
+                                ></edit-question-form>                                
+                        </div>
+
+                        <nav *ngIf="pager.count > pager.limit" class="page-pagination float-right" >
+                                <span class="tabel-label">{{i18n?.current_page}}: {{ pager.current }}. {{i18n?.total}}: {{ pager.count }}</span>
+                                <ul class="pagination">
+                                <li class="pager-item"><a *ngIf="pager.has_prev" class="previous" (click)="goPage(pager.limit,pager.current-1, filter)" >
+                                        <i class="fa fa-chevron-left" aria-hidden="true"><</i>    
+                                </a></li>
+                                
+                                <li  class="pager-item" ><a *ngIf="pager.has_next" class="previous" (click)="goPage(pager.limit, pager.current+1, filter)">
+                                        <i class="fa fa-chevron-right" aria-hidden="true">></i>    
+                                </a></li>
+                                </ul>
+                        </nav>
+                       
+                        <div class="row question-item" *ngFor="let r of pager.results; let odd = odd">
+                                <div class="col-md-10">
+                                        <div *ngIf="!r.is_edit">
+                                                <p>
+                                                        RU: {{ r.question_ru }} :
+                                                        <strong>{{ r.answers_ru }}</strong>: 
+                                                </p>
+                                                <p>
+                                                        EN: {{ r.question_en }} :
+                                                        <strong> {{ r.answers_en }} </strong>
+                                                </p>
+                                                <p>
+                                                        <strong> {{ r.theme }} </strong>
+                                                </p>
+                                                <p>
+                                                                
+                                                <strong> {{ i18n?.level }} </strong>: {{ r.level }}
+                                                <strong> {{ i18n?.category }} </strong>: {{ r.theme }}
+                                                <strong> {{ i18n?.type }} </strong>: {{ r.lang }}
+                                                </p>
+                                        </div>
+                                        
+                                        <edit-question-form
+                                                *ngIf="r.is_edit"
+                                                [obj]="edit_obj"
+                                                (submitEvent)="submitForm($event)"
+                                        ></edit-question-form>
+                                        
+                                      
+                                       
+                                </div>
+                                <div class="col-md-2">
+                                        <p>
+                                        <button class="btn btn-success btn-block" (click)="editQuestion(r.id)" >
+                                                <span class ="glyphicon glyphicon-pencil"></span>
+                                                <!--{{ i18n?.edit }}-->
+                                        </button>
+                                        </p>
+                                        
+                                        <p>
+                                                <button *ngIf="!r.is_published" class="btn btn-danger btn-block" (click)="publishQuestion(r.id)" >
+                                                        {{ i18n?.publish }}
+                                                </button>
+                                                <button *ngIf="r.is_published" class="btn btn-success btn-block" (click)="unpublishQuestion(r.id)" >
+                                                                {{ i18n?.unpublish }}
+                                                </button> 
+                                        <p>
+                                                <button class="btn btn-danger btn-block" (click)="deleteQuestion(r.id)" >
+                                                        <!-- <span class ="glyphicon glyphicon-remove-circle"></span> -->
+                                                        {{ i18n?.delete }}
+                                                </button>
+                                        </p>
+                                </div>
+                                
+                        </div>
+                        
+                       
+                </div>
+
+                <div class="col-md-3">
+                                <h3>{{i18n?.filter}}</h3>
+                                <filter [language] = "language" [current_filter]="filter" (filterOn)="handleFilter($event)"></filter>
+
+                </div>
+        </div>
+
+</div>
+

@@ -1,0 +1,61 @@
+{% load i18n %}
+<div id="{{ token }}" class="flashWrapp student_cam">
+    <b> {{ user.user_name }}</b> <a href="#" onclick="return false" style="float: right; color red" class="glyphicon glyphicon-remove-circle close_student_video"></a>
+     <object id="{{ token }}_mic" data="/static/js/Chat.swf?v=232" type="application/x-shockwave-flash" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"  width="280" height="200">
+            <param name="movie" value="/static/Chat.swf?v=232" />
+            <param name="quality" value="high" />
+            <param name="bgcolor" value="#ffffff" />
+            <param name="play" value="true" />
+            <param name="loop" value="true" />
+            <param name="wmode" value="window" />
+            <param name="scale" value="showall" />
+            <param name="menu" value="true" />
+            <param name="devicefont" value="false" />
+            <param name="salign" value="" />
+            <param name="allowScriptAccess" value="always" />
+            <param name="FlashVars" value="codecOn=true&ww=800&hh=600&fps=20&streamName={{ token }}&url=rtmp://{{ video_server }}/lector&micOn=true&type={{ type }}" />
+           
+   <embed
+       src="/static/Chat.swf?v=232"
+       name="{{ token }}_mic" 
+       allowScriptAccess="always"
+       width="280" height="200" 
+       scale="exactfit"
+       type="application/x-shockwave-flash"
+       flashvars = "codecOn=true&ww=800&hh=600&fps=20&streamName={{ token }}&url=rtmp://{{ video_server }}/lector&micOn=true&type={{ type }}"
+       pluginspage="http://www.macromedia.com/go/getflashplayer"> </embed>
+
+            
+    </object>
+
+
+
+{% if type == 'in' %}
+  <a  href="#" data-token={{ token }} class="btn btn-success quick_message red turn_student_cam_off_button" ><span class="glyphicon glyphicon-facetime-video"></span> &nbsp;{% trans 'Off' %}</a>  
+
+<a {% if user.is_mic_on == True %} style="display: none" {% endif %} href="#" class="btn btn-success turn_student_mic_on" data-token="{{ token }}"  data-id="{{ user.id }}"> <span class="glyphicon glyphicon-volume-up"></span> &nbsp;  {% trans 'On' %} </a>
+
+<a {% if user.is_mic_on == False %} style="display: none" {% endif %} href="#" class="btn btn-success red turn_student_mic_off" data-token="{{ token }}"  data-id="{{ user.id }}"> <span class="glyphicon glyphicon-volume-off"></span> &nbsp;  {% trans 'Off' %} </a>
+
+
+{% else %}
+
+
+<a  href="#" style="display: none" id="{{ token }}_mic_on" class="btn btn-success" ><span class="glyphicon glyphicon-volume-up"></span> &nbsp;{% trans 'Microphone enabled' %}</a>  
+
+<a  href="#" style="display: none" id="{{ token }}_mic_off" class="btn btn-success red" ><span class="glyphicon glyphicon-volume-off"></span> &nbsp;{% trans 'Microphone disabled' %}</a> 
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+</div>
+
+

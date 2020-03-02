@@ -1,0 +1,1 @@
+. ./ve/bin/activate; cd dj; ./manage.py test -v 2

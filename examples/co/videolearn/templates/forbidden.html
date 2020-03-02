@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block js %}
+    {{ block.super }}
+    {{ form.media }}
+        
+ 
+{% endblock %}
+
+{% block bredcrumbs %} 
+            <!-- BEGIN BREADCRUMBS -->
+            <div class="row breadcrumbs" >
+                <div class="container">
+                    <div class="col-md-3 col-sm-3">
+                      <h3> <a href="{{ lesson.course.get_absolute_url }}">{{ lesson.course }}</a></h3>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                         
+                        
+                        <div class="div_uploaded_img" id="from_publisher"> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END BREADCRUMBS -->
+
+ {% endblock %}
+
+{% block content %}
+    <h2> {{ lesson.name }} </h2>
+
+    <h2> {% trans 'Sorry but you did not pay for watching' %} </h2>
+
+     {% include "buy_link.html" with l=lesson %}
+                               
+{% endblock %}
+

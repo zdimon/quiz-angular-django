@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block title %} Online courses {% endblock %}
+
+{% block content %}
+
+<div class="col-md-12">
+
+<h2>{{ page.title }}</h2>
+
+<div class="well"> 
+ {{ page.content|safe }}
+</div>
+   
+    
+
+<!--
+
+ <h2> {% trans 'Active courses' %} </h2>    
+
+{% for c in courses %}
+ <div class="well">
+   <div style="display: inline-block; width: 150px; height: 150px;"><a href="{{ c.get_absolute_url }}">{{ c.thumb }}</a></div>
+  <div style="display: inline-block;"> <h3><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></h3>
+   {{ c.desc|safe }}
+  </div>
+   <div style="clear: both"> </div>
+</div> 
+{% endfor %}
+
+-->
+
+
+ <h2> {% trans 'Active courses' %} </h2>    
+
+{% for c in vcourses %}
+ <div class="well">
+   <div class="col-md-2" ><a href="{{ c.get_absolute_url }}">{{ c.thumb }}</a></div>
+  <div class="col-md-10"> <a style="font-size: 16px" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+   {{ c.desc|safe }}
+  </div>
+   <div style="clear: both"> </div>
+
+   <h3> {% trans 'Lessons' %} </h3>
+
+    <table class="table table-striped">
+        {% for l in c.vlesson_set.all %}
+            <tr> 
+                <td> <a href="{{ l.get_absolute_url}}"> {{l}} </a></td> 
+                <td> <a href="{{ l.get_absolute_url}}" class="btn btn-primary"> {% trans 'View' %}  </a></td> 
+            </tr>
+        {% endfor %}
+    </table>
+
+</div> 
+{% endfor %}
+
+
+<!--
+ <h2> {% trans 'Our teachers' %} </h2>  
+
+{% for u in users %}
+ <div class="well">
+
+     <div style="float: left; padding-right: 10px">{{ u.thumb }}</div>
+     <strong>{{ u.first_name }} {{ u.last_name }}</strong> <br />
+     {{ u.desc }}
+     <div style="clear: both"> </div>   
+</div> 
+{% endfor %}   
+    
+</div>
+
+-->
+
+
+
+
+{% endblock %}
+

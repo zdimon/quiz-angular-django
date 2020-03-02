@@ -1,0 +1,38 @@
+.field_error {
+    border: 1px solid red;
+}
+.acenter {
+    text-align: center;
+}
+
+.iblock {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+h1 {
+    font-size: 40px !important;
+}
+
+p.mainpage {
+    text-align: justify;
+    
+}
+
+
+#id_birthday_month, #id_birthday_day, #id_birthday_year {
+    width: 100px;
+    display: inline-block;
+}
+
+.small-avatar {
+    float: right;
+}
+
+.h1-mainpage{
+    font-size: 20px !important;
+    font-weight: bold;
+}

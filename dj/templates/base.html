@@ -1,0 +1,133 @@
+{% load staticfiles %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    {% block base_href %}<base href="/">{% endblock %}
+    <link rel="shortcut icon" type="image/png" href="/static/image/favicon.jpeg"/>
+    <meta charset="utf-8" />
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="target-densitydpi=device-dpi">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>{% block title %}{% trans 'Quizer' %}{% endblock %}</title>
+    {% block seo_tags %}{% endblock %}
+    {% block style %}
+        <link href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css"/>
+        
+    {% endblock %}
+    {% block js %}{% endblock %}
+
+</head>
+<body>
+    {% block navbar %}
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">{% trans 'QUIZER' %}</a>
+          </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a class="navbar-brand" href="/quiz/#index">{% trans 'Play' %}</a></li>
+              <!--
+                <li><a href="/catalog">{% trans 'Catalog' %}</a></li>
+              
+              <li><a href="#">{% trans 'Rules' %}</a></li>
+              <li><a href="#about">{% trans 'Contacts' %}</a></li>
+              -->
+            </ul>
+         
+
+              {% if not user.is_authenticated %}
+                <form class="navbar-form navbar-right" action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <input type="text" name="username" placeholder="Email" style="width: 100px"  class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name="password" style="width: 100px" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">{% trans 'Sign in' %}</button>
+                    <a style="color: white" href="{% url 'register' %}">{% trans 'Sign up' %}</a>
+                    <a href="{% url "social:begin" "google-oauth2" %}"><img src="/static/image/google.png" /></a>
+                  </form>
+                  
+              {% else %}
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/user/profile/edit">{% trans 'My profile' %}</a></li>
+                    <li><a href="/logout">{% trans 'Logout' %}</a></li>
+                </ul>
+                <a href="/user/profile/edit"><img class="small-avatar" src="{{ request.user.profile.get_small_avatar_url }}" /></a>
+                 
+              {% endif %}
+                 
+              <ul class="nav navbar-nav" style="float: right">
+                  {% if LANGUAGE_CODE == 'en' %}
+                  <li>
+                      <a href="{% url 'change_language' %}?language=ru&next={{request.get_full_path}}">
+                         <!--<img src="{% static "image/ru.png" %}" title="{% trans 'Russian' %}" />-->
+                         Русский
+                      </a>
+                   </li>
+                   <li><a style="color: white"><strong>English</strong></a></li>
+                  {% endif %}
+  
+                  {% if LANGUAGE_CODE == 'ru' %}
+                   <li><a style="color: white"><strong>Русский</strong></a></li>
+                   <li>
+                      
+                      <a href="{% url 'change_language' %}?language=en&next={{request.get_full_path}}">
+                         <!-- <img src="{% static "image/en.png" %}" title="{% trans 'English' %}" /> -->
+                         English
+                      </a>                           
+                  </li>
+                  {% endif %}
+              </ul>              
+
+
+
+          </div><!--/.navbar-collapse -->
+        </div>
+      </nav>  
+    {% endblock %}  
+
+
+    {% for message in messages %}
+      <div class="container">
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      </div>
+    {% endfor %}  
+
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+      <div class="container">
+          <footer>
+            <p>&copy; Powered with Angular 2 and Django</p>
+          </footer>
+      </div>
+    {% endblock %}
+    <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'node_modules/tether/dist/js/tether.min.js' %}"></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    
+    <!--
+    <script src="{% static 'dist/sandbox_vendor.js' %}"></script>
+    <script src="{% static 'dist/sandbox.js' %}"></script>
+    -->
+    {% block angular_js %} {% endblock %}
+
+
+</body>
+</html>

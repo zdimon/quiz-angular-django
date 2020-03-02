@@ -1,0 +1,1 @@
+. ./ve/bin/activate; ./dj/manage.py celeryd

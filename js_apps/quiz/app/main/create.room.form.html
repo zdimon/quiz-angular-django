@@ -1,0 +1,70 @@
+<div class="form-horizontal edit-question">
+
+    <!--
+
+        <form [formGroup] = "formModel" (ngSubmit)="handleSubmit()">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <p>{{ i18n?.name }}</p>
+                    <input formControlName="name" type="text" class="form-control" /> 
+                    <span style="red" *ngIf="!formModel.controls['name'].valid && formModel.controls['name']?.touched">{{i18n?.required}}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <p>{{ i18n?.category }}</p>
+                    <div class="col-md-4" *ngFor="let t of themecheckbox.controls; let i=index">
+                      <input type="checkbox" />
+                      {{ t.controls.title.value }} 
+                    
+                    
+                        
+                    
+                      
+                    </div>
+                    <span style="red" *ngIf="!formModel.controls['name'].valid && formModel.controls['name']?.touched">{{i18n?.required}}</span>
+                </div>
+            </div>
+             <button class="btn btn-success float-left"  type="submit">{{i18n?.save}}</button>
+        </form>
+
+    -->
+
+    <div class="form-group">
+        <div class="col-md-12">
+                <br />
+                <p>{{ i18n?.name }}</p>
+                <input [(ngModel)]='room.name' type="text" class="form-control" /> 
+        </div>
+    </div>
+
+    <div class="form-group">
+                <div class="col-md-12">
+                        <br />
+                        <p>{{ i18n?.category }}</p>
+                        <div class="col-md-4" *ngFor="let t of room.themes">
+                            <input type="checkbox" id="{{t.id}}" [(ngModel)]="t.is_selected"  (change)="themeChange($event)" />
+                            <span>{{ t.name }}</span>
+                        </div>
+                </div>
+    </div>
+
+    <div class="form-group">
+                <div class="col-md-12">
+                        <br />
+                        <h4>{{ i18n?.type_room }}</h4>
+                        <select [(ngModel)]="room.type">
+                            <option *ngFor="let t of room.types" [ngValue]="t.type" >{{t.name}}</option>
+                        </select>
+                </div>
+    </div>
+
+
+    <div class="form-group">
+            <div class="col-sm-12">
+                    <button class="btn btn-success float-left" (click)="submitForm()" >{{i18n?.save}}</button>
+            </div>
+    </div>
+
+    
+</div>

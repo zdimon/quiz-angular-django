@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block navbar %} 
+    <!--
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3>{% trans 'Quiz' %}</h3>
+            </div>
+            <div class="col-sm-4">
+                <a class="btn btn-warning" href="/">{% trans 'Exit' %}</a>
+            </div>
+        </div>
+    </div>
+    -->
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron" style="padding-top: 0">
+        <div class="container">
+          <quiz-app 
+          data-room-token="{{ room.token }}" 
+          data-socket-server="{{ socket_server }}/echo"
+          data-user-token="{{ token }}"
+          data-user-id="{{ request.user.id }}"
+          data-language="{{LANGUAGE_CODE}}"
+          >Загрузка...</quiz-app>
+        </div>
+        
+    </div>
+      
+  
+     
+
+{% endblock %}
+
+{% block angular_js %} 
+    <script>
+        window.current_room = '{{ token }}';
+        
+       
+    </script>
+    <script src="{% static 'dist/polyfills.js' %}"></script>
+    <script src="{% static 'dist/vendor.js' %}"></script>
+    <!--
+    <script src="{% static 'dist/app.js' %}"></script>
+    -->
+
+{% endblock %}
+
+{% block style %}
+
+    {{ block.super }}
+    <link href="{% static 'css/room.css' %}" rel="stylesheet" type="text/css"/>
+    
+{% endblock %}
+
+{% block footer %} {% endblock %}

@@ -1,0 +1,10 @@
+ve
+*.pyc
+dj/db.sqlite3
+.idea
+local.py
+node_modules
+package-lock.json
+dj/tmp
+config/local.js
+dj/media

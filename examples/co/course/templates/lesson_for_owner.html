@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load compress %}
+{% load staticfiles %}
+{% load i18n %}
+{% block js %}
+ 
+        {{ block.super }}
+
+        <script src="{% static 'sockjs-client/dist/sockjs-0.3.4.min.js' %}"></script>
+        <script src="{% url 'course_owner_js' lesson_id=lesson.id %}"></script>
+      
+        <script src="{% static 'ajax_upload/js/jquery.iframe-transport.js' %}"></script>
+        <script src="{% url 'upload_image_widget' lesson_id=lesson.id %}"></script>
+       
+<script>
+    $(function() {
+        AjaxUploadWidget.autoDiscover({
+          onSuccess: function(data) { alert('Hi!'); }
+      });
+    });
+</script>
+
+{% endblock %}
+
+{% block js_for_innerpage %} {% endblock %}
+
+{% block style %}
+     {{ block.super }}
+    <link href="{% static 'ajax_upload/css/ajax-upload-widget.css' %}" rel="stylesheet" type="text/css"/>
+    
+    
+{% endblock %}
+
+
+    {% block bredcrumbs %}
+        <!-- BEGIN BREADCRUMBS -->
+        <div class="row breadcrumbs" >
+            <div class="container">
+                <div class="col-md-3 col-sm-3">
+                   
+                        <a {% if lesson.is_runing == True %} style="display: none" {% endif %} href="#" class="btn btn-success" id="start_lesson_btn"  data-replace="no">{% trans 'Start lesson' %}</a>
+                   
+                        <a {% if lesson.is_runing == False %} style="display: none" {% endif %} href="#" class="btn btn-success red"  id="stop_lesson_btn"  data-replace="no">{% trans 'Stop lesson' %}</a>
+                   
+                </div>
+                <div class="col-md-9 col-sm-9">
+                     
+                    
+                    <div class="div_uploaded_img" id="from_publisher"> </div>
+                </div>
+            </div>
+        </div>
+        <!-- END BREADCRUMBS -->
+    {% endblock %}
+
+
+{% block h1 %} {{ lesson.name }} {% endblock %}
+
+
+{% block participants_intop %}
+     <span class="participants_title"> PARTICIPANTS </span><div id="participants"> </div>
+{% endblock %}
+
+{% block incubator %}
+<div id="incubator">
+ <b> {% trans 'Incubator' %} </b>  
+
+ <ul id="incubator_list">
+     {% for i in incubator %}
+        <li id="incubator_item_{{ i.id }}"> <a data-id="{{i.id}}" href="#"> {{ i }} </a> </li>
+     {% endfor %}
+ </ul>
+</div>
+{% endblock %}
+
+{% block title %} Online courses {% endblock %}
+
+{% block content %}
+
+<div class="col-md-3">
+
+<div id="owner_cam"><h3 align="center">Camera is disabled</h3></div>
+<div class="cam_actions" align="center">
+
+
+<a {% if user.is_cam_on == True %} style="display: none" {% endif %} href="#" class="btn btn-success" id="turn_owner_cam_on"> <span class="glyphicon glyphicon-facetime-video"></span>&nbsp;{% trans 'On' %}</a> 
+
+<a {% if user.is_cam_on == False %} style="display: none" {% endif %} href="#" class="btn btn-success" id="turn_owner_cam_off"> <span class="glyphicon glyphicon-facetime-video"></span> &nbsp;{% trans 'Off' %} </a>
+
+
+
+<a {% if user.is_mic_on == True %} style="display: none" {% endif %} href="#" class="btn btn-success" id="turn_owner_mic_on"> <span class="glyphicon glyphicon-volume-up"></span> &nbsp;  {% trans 'On' %} </a>
+
+<a {% if user.is_mic_on == False %} style="display: none" {% endif %} href="#" class="btn btn-success red" id="turn_owner_mic_off"> <span class="glyphicon glyphicon-volume-off"></span> &nbsp;  {% trans 'Off' %} </a>
+
+
+<a class="btn btn-success" href="#" id="clear_writeboard"> <span class="glyphicon glyphicon-remove-sign"></span></a>
+
+</div>
+
+
+
+
+<form align="center">
+
+<textarea name="text_lesson" id="text_lesson"></textarea>
+<div style="padding: 5px 0 5px 0; text-align: center">
+
+    <select name="size" id="text_size">
+          <option value="16">{% trans 'Small' %}</option>
+          <option value="22">{% trans 'Middle' %}</option>
+          <option value="28">{% trans 'Big' %}</option>
+          <option value="32">{% trans 'Very big' %}</option>
+    </select>
+
+    <select name="size" id="text_color">
+          <option value="#75E234">{% trans 'Green' %}</option>
+          <option value="yellow">{% trans 'Yellow' %}</option>
+          <option value="red">{% trans 'Red' %}</option>
+          <option value="blue">{% trans 'Blue' %}</option>
+    </select>
+
+    <select name="size" id="text_align">
+          <option value="left">{% trans 'Left' %}</option>
+          <option value="center">{% trans 'Center' %}</option>
+          <option value="right">{% trans 'Right' %}</option>
+    </select>
+
+</div>
+
+<div style="text-align: center">
+<a  href="#" class="btn btn-success send_text" data-replace="yes">{% trans 'Replace' %}</a>
+<a  href="#" class="btn btn-success send_text"  data-replace="no">{% trans 'Add' %}</a>
+</div>
+
+</form>
+    <div class="div_uploaded_img">
+        {{ form.as_p }}
+    </div>
+
+
+    <form align="center">
+
+    <textarea name="text_lesson" id="chat_text_input"></textarea>
+    <a  href="#" class="btn btn-success" id="send_chat_text" data-replace="yes">Send message</a>
+
+    </form>
+
+  
+
+</div>
+
+<div class="col-md-7">
+    
+    <div id="write_board" class="student_writeboard"> <h2 align="center"> Write board </h2></div>
+   
+</div>
+
+<div class="col-md-2 right_column">
+   
+
+ 
+   <!--
+   <ul id="chat_text_messages">
+ 
+   </ul>
+-->
+
+</div>
+ <div class="col-md-12">    
+
+ <div id="student_cam_list"></div>
+</div>
+
+
+{% endblock %}
+

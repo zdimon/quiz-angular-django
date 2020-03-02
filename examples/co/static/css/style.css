@@ -1,0 +1,374 @@
+#write_board {
+
+background: #000;
+color: #4ECA34;
+padding: 5px;
+overflow: auto;
+
+}
+
+.owner_writeboard {
+  height: 500px;
+  width: 680px;
+}
+
+.student_writeboard {
+
+}
+
+.student_writeboard p img{
+
+  width: 860px;
+}
+
+
+.student_writeboard p{
+  font-size: 18px;
+}
+
+.owner_writeboard p{
+  font-size: 14px;
+}
+
+#write_board p {
+  
+}
+
+#write_board h2 {
+color: #8ae234;
+}
+
+#logout {
+
+margin-top: 7px;
+
+}
+
+#start_link {
+
+margin-top: 7px;
+margin-left: 10px;
+
+}
+
+.silver
+{
+  color: silver;
+}
+
+.user_thumb {
+
+margin-left: 10px;
+
+}
+
+#text_lesson {
+
+border: 1px solid silver;
+height: 50px;
+width: 100%;
+
+}
+
+.send_text {
+
+width: 40%;
+margin-top: 5px;
+
+}
+
+#add_text_lesson{
+
+width: 100px;
+margin-top: 5px;
+margin-left: 10px;
+}
+
+
+#clear_writeboard {
+
+
+background: #ce5c00;
+
+}
+
+
+#turn_owner_cam_off {
+
+margin-left: 10px;
+background: #cc0000;
+
+}
+
+.cam_actions {
+
+text-aling: center;
+padding-bottom: 10px; 
+padding-top: 10px;
+
+}
+
+#owner_cam{
+background: #000;
+width: 280px;
+height: 200px;
+
+}
+
+#owner_cam h3 {
+color: #8ae234;
+padding-top: 80px;
+}
+
+
+#student_cam h3 {
+color: #8ae234;
+padding-top: 80px;
+}
+
+
+#ostudent_cam{
+background: #000;
+width: 280px;
+height: 200px;
+
+}
+
+
+#history li a
+{
+  display: inline-block;
+  width: 100px;
+}
+
+#history li{
+width: 190px;
+list-style: none;
+}
+
+#history {
+
+height: 100px;
+width: 250px;
+overflow: auto;
+
+}
+
+#send_chat_text{
+width: 100%;
+margin-top: 10px;
+}
+
+#chat_text_input{
+margin-top: 10px;
+width: 100%;
+border: 1px solid silver;
+}
+
+#chat_text_messages{
+margin-top: 5px;
+height: 190px;
+width: 100%;
+border: 1px solid silver;
+padding-left: 0px;
+overflow: auto;
+}
+
+#chat_text_messages li {
+  list-style: none;
+  padding: 5px;
+}
+
+#chat_text_messages li img {
+  
+  text-align: left;
+}
+
+#chat_text_messages li span {
+  float: right;
+}
+
+#chat_text_messages li b {
+  color: #222222;
+  padding-left: 5px;
+}
+
+.right_column
+{
+ padding-left: 40px;
+
+}
+
+.quick_message {
+
+
+ color: black;
+ text-decoration: underline;
+}
+
+#participants {
+
+ display: inline-block;
+
+}
+
+.participants_title {
+ 
+ color:   #85DD34;
+ font-size: 16px;
+ padding-left: 15px;
+ display: inline-block;
+
+}
+
+.uploaded_image
+{
+  border: 1px solid #f57900;
+  padding: 1px;
+  margin: 1px;
+  display: inline-block;  
+}
+
+.active {
+ border: 1px solid red;
+
+}
+
+.user_participant {
+display: inline-block;
+
+}
+
+
+
+
+    .infIn {
+      -webkit-animation: infAnim 0.5s linear both;
+      -moz-animation: infAnim 0.5s linear both;
+      animation: infAnim 0.5s linear both;
+    }
+
+    @-webkit-keyframes infAnim {
+      from { opacity: 0; -webkit-transform: translateY(-50px); }
+      to { opacity: 1; -webkit-transform: translateY(0px); }
+    }
+    @-moz-keyframes infAnim {
+      from { opacity: 0; -moz-transform: translateY(-50px); }
+      to { opacity: 1; -moz-transform: translateY(0px); }
+    }
+    @keyframes infAnim {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0px); }
+    }
+
+    .infOut {
+      -webkit-animation: infAnimOut 0.5s linear both;
+      -moz-animation: infAnimOut 0.5s linear both;
+      animation: infAnimOut 0.5s linear both;
+    }
+
+    @-webkit-keyframes infAnimOut {
+      0% { opacity: 1; -webkit-transform: translateX(0);}
+      100% { opacity: 0; -webkit-transform: translateX(100px);}
+    }
+
+    @-moz-keyframes infAnimOut {
+      0% { opacity: 1; -moz-transform: translateX(0);}
+      100% { opacity: 0; -moz-transform: translateX(100px);}
+    }
+
+    @keyframes infAnimOut {
+      0% { opacity: 1; transform: translateX(0);}
+      100% { opacity: 0; transform: translateX(100px);}
+    }
+
+    #informWindows {
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      max-width: 170px;
+      border: 2px solid #73B036;
+      background: #47A447;
+      padding: 10px 15px;
+      border-radius: 4px;
+      box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+      font: 13px/16px SegoeUI SemiLight;
+      color: #000;
+      text-align: center;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+.well img {
+vertical-align: top;
+} 
+
+#incubator_list li {
+ width: 100%;
+ list-style: none;
+ height: 150px;
+ overflow: hidden;
+}
+
+#event_list li {
+ width: 100%;
+ list-style: none;
+}
+
+.delete_incubator
+{
+  float: right;
+}
+
+.move_incubator_to_event {
+ float: left;
+}
+
+.move_event_to_incubator {
+ float: right;
+}
+
+
+
+
+#event_list li:hover { background-color: #8ae234; }
+#incubator_list li:hover { background-color: #8ae234; }
+
+
+#incubator {
+position: fixed;
+height: 100%;
+width: 15%;
+border: solid 1px silver;
+overflow: auto; 
+}
+
+
+
+.student_cam {
+
+display: inline-block;
+width: 280px;
+
+}
+
+
+.ckeditor div {
+
+margin-left: 0px !important;
+
+
+}
+
+#test_running_list li {
+
+list-style: none;
+
+}
+
+
+
+
+

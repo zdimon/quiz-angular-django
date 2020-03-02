@@ -1,0 +1,32 @@
+Django==1.11
+celery==3.1.11
+django-celery==3.1.10
+redis==2.10.1
+django-mptt==0.5.5
+tornado==4.0.1
+sockjs-tornado==1.0.1
+-e git+https://github.com/peterbe/django-sockjs-tornado#egg=django-sockjs-tornado
+django-social-auth==0.7.28
+django-rosetta==0.7.13
+django-modeltranslation
+psycopg2
+django-jsonview==1.1.0
+django-rest-framework
+beautifulsoup4==4.6.0
+docutils==0.14
+Pillow
+sorl-thumbnail==12.3
+django-image-cropping==1.1.0
+python_slugify==1.2.4
+django-registration==2.3
+-e git+git@github.com:SmileyChris/easy-thumbnails.git#egg=easy-thumbnails
+django-widget-tweaks==1.4.1
+django_jenkins==0.110.0
+pep8==1.7.1
+pyflakes==1.6.0
+pylint==1.8.2
+pytils
+django-tinymce==2.7.0
+psycopg2-binary
+social-auth-app-django==2.1.0
+ django-countries==5.2

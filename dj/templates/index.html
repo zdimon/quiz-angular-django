@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
+
+  
+    
+    <div class="jumbotron">
+      
+        <div class="container">
+            
+            <div class="col-md-4 mainpage">
+              <h1 class="h1-mainpage">{{ page.title }}</h1>
+              {{ page.content|safe }}
+            </div>
+          
+            <div class="col-md-8">
+                <!--<h3 class="display-3">{% trans 'How it works' %}</h3>-->
+                
+                <chat-app
+                data-language="{{LANGUAGE_CODE}}"
+                data-socket-server="{{ socket_server }}/echo"
+                {% if request.user.is_authenticated %} 
+                  data-user-id = {{ request.user.id }} 
+                  data-is-authenticated = true
+                  data-user-name = {{ request.user.get_username }}
+                {%else%}  
+                  data-user-id = 0
+                  data-is-authenticated = false
+                  data-user-name = 'quest' 
+                {% endif %}
+                >
+
+                </chat-app>
+              </div>
+
+        </div>
+      </div>
+    
+    
+      <div class="container">
+        <!-- Example row of columns -->
+        <h2 class="display-3">{% trans 'Active rooms' %}</h2>
+        <div class="row">
+            {% for r in rooms %}
+              <div class="col-md-4">
+                <h2>{{ r.quiz.name }}</h2>
+                <p>{% trans 'Total questions' %}: {{ r.get_cnt_questions }}</p>
+                <p>{% trans 'Curent question' %}: {{ r.get_current_question_obj }}</p>
+                <p><a href='/ru/quiz/#room/{{ r.token }}' class="btn btn-primary btn-lg" id="ping" href="#" role="button">{% trans 'Join quiz' %}</a></p>
+              </div>
+              {% endfor %}
+          
+        </div>
+  
+       
+      </div> <!-- /container -->
+
+      <div class="row">
+        <div class="container">
+          <!-- Example row of columns -->
+          <h2 class="display-3">{% trans 'Popular quizes' %}</h2>
+              {% for r in popular %}
+                <div class="col-md-4">
+                  <h2>{{ r.quiz.name }}</h2>
+                  <p>{% trans 'Total questions' %}: {{ r.get_cnt_questions }}</p>
+                  <p>{% trans 'Curent question' %}: {{ r.get_current_question_obj }}</p>
+                  <p><a href='{{ r.get_absolute_url }}' class="btn btn-primary btn-lg" id="ping" href="#" role="button">{% trans 'Join quiz' %}</a></p>
+                </div>
+                {% endfor %}
+        </div>
+      </div>
+    
+       
+      </div> <!-- /container -->      
+
+{% endblock %}
+
+{% block title %}
+      {{ page.meta_title }}
+{% endblock %}
+
+{% block seo_tags %}
+  <meta name="description" content="{{ page.meta_description }}">
+  <meta name="keywords" content="{{ page.meta_keywords }}">
+{% endblock %}
+
+
+{% block angular_js %} 
+    <script>
+      window.current_language = '{{ LANGUAGE_CODE }}';
+    </script>    
+
+    <script src="{% static 'dist/chat_vendor.js' %}"></script>   
+    <script src="{% static 'dist/chat.js' %}"></script>    
+
+    <!--
+      <script>
+        window["socket_server"] = '{{ socket_server }}/echo';
+        window["user_id"] = '{{ request.user.id }}';
+      </script>
+    
+      <script src="{% static 'dist/online.min.js' %}"></script>
+    -->
+  
+{% endblock %}
+
+{% block style %}
+
+    {{ block.super }}
+    <link href="{% static 'css/room.css' %}" rel="stylesheet" type="text/css"/>
+    
+{% endblock %}
+

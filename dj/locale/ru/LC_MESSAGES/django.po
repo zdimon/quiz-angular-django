@@ -1,0 +1,659 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-30 08:49+0000\n"
+"PO-Revision-Date: 2018-05-30 08:52+0000\n"
+"Last-Translator:   <admin>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
+
+#: dj/account/models.py:22
+msgid "Male"
+msgstr "Мужчина"
+
+#: dj/account/models.py:23
+msgid "Female"
+msgstr "Женщина"
+
+#: dj/account/models.py:25 dj/account/models.py:79 dj/chat/models.py:29
+#: dj/quiz/models/models.py:52 dj/quiz/models/models.py:244
+#: dj/quiz/models/models.py:252
+msgid "User"
+msgstr "Пользователь"
+
+#: dj/account/models.py:26
+msgid "Wins"
+msgstr "Побед"
+
+#: dj/account/models.py:27
+msgid "Account"
+msgstr "Счет"
+
+#: dj/account/models.py:28
+msgid "Image"
+msgstr "Изображение"
+
+#: dj/account/models.py:29
+msgid "Phone number"
+msgstr "Номер телефона "
+
+#: dj/account/models.py:30
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: dj/account/models.py:31 dj/templates/account/profile_form.html:71
+msgid "Birthday"
+msgstr "День рождения"
+
+#: dj/account/models.py:32 dj/templates/account/profile_form.html:66
+msgid "Gender"
+msgstr "Пол"
+
+#: dj/account/models.py:33 dj/templates/account/profile_form.html:60
+msgid "Country"
+msgstr "Страна"
+
+#: dj/account/models.py:34
+msgid "Is online?"
+msgstr "В онлайне?"
+
+#: dj/account/models.py:35
+msgid "IP address"
+msgstr "IP-адрес"
+
+#: dj/account/models.py:80
+msgid "Ammount"
+msgstr "Количество"
+
+#: dj/account/models.py:81 dj/quiz/models/models.py:137
+msgid "Created at"
+msgstr "Создан"
+
+#: dj/account/views.py:146
+msgid "You profile has been saved successfully."
+msgstr "Ваш профайл был успешно сохранен."
+
+#: dj/chat/models.py:12 dj/quiz/models/models.py:58
+#: dj/quiz/models/models.py:230 dj/quiz/models/models.py:239
+#: dj/quiz/translation.py:38
+msgid "Question"
+msgstr "Вопрос"
+
+#: dj/chat/models.py:28 dj/quiz/models/models.py:243
+msgid "Text"
+msgstr "Текст"
+
+#: dj/chat/utils.py:13 dj/chat/views.py:85
+msgid "Master"
+msgstr "Ведущий"
+
+#: dj/chat/views.py:86
+msgid "Wait...Request for the next question."
+msgstr "Подождите...запрос на следующий вопрос."
+
+#: dj/dj/settings.py:140 dj/quiz/models/models.py:41 dj/templates/base.html:78
+msgid "Russian"
+msgstr "Русский"
+
+#: dj/dj/settings.py:141 dj/quiz/models/models.py:42 dj/templates/base.html:90
+msgid "English"
+msgstr "Английский"
+
+#: dj/main/models.py:14
+msgid "Title"
+msgstr "Название"
+
+#: dj/main/models.py:16 dj/quiz/models/models.py:20
+#: dj/quiz/models/models.py:103
+msgid "Alias"
+msgstr "Псевдоним"
+
+#: dj/main/models.py:17
+msgid "META title"
+msgstr "МЕТАТЕГ title"
+
+#: dj/main/models.py:18
+msgid "META keywords"
+msgstr "Мета ключевые слова"
+
+#: dj/main/models.py:19
+msgid "META description"
+msgstr "Мета описание"
+
+#: dj/main/models.py:29
+msgid "Theme"
+msgstr "Тема"
+
+#: dj/main/models.py:30
+msgid "E-mail"
+msgstr "Электронная почта"
+
+#: dj/main/models.py:32
+msgid "Message"
+msgstr "Сообщение"
+
+#: dj/main/models.py:33
+msgid "Satus"
+msgstr "Сатус"
+
+#: dj/quiz/models/models.py:21 dj/quiz/models/models.py:104
+#: dj/quiz/translation.py:35
+msgid "Name"
+msgstr "Название"
+
+#: dj/quiz/models/models.py:34
+msgid "Elementary"
+msgstr "Элементарно"
+
+#: dj/quiz/models/models.py:35
+msgid "Easy"
+msgstr "Легко"
+
+#: dj/quiz/models/models.py:36
+msgid "Middle"
+msgstr "Средний"
+
+#: dj/quiz/models/models.py:37
+msgid "Hard"
+msgstr "Сложный"
+
+#: dj/quiz/models/models.py:38
+msgid "Very hard"
+msgstr "Очень сложный"
+
+#: dj/quiz/models/models.py:43
+msgid "Russian and English"
+msgstr "Русско-английский"
+
+#: dj/quiz/models/models.py:47
+msgid "Full match"
+msgstr "Полное совпадение"
+
+#: dj/quiz/models/models.py:48
+msgid "Substring match"
+msgstr "Не полное совпадение"
+
+#: dj/quiz/models/models.py:53
+msgid "Language"
+msgstr "Язык"
+
+#: dj/quiz/models/models.py:54 dj/quiz/translation.py:42
+msgid "Level"
+msgstr "Уровень"
+
+#: dj/quiz/models/models.py:55
+msgid "Mode of quize"
+msgstr "Режим викторины"
+
+#: dj/quiz/models/models.py:56
+msgid "Type of matching"
+msgstr "Тип совпадения"
+
+#: dj/quiz/models/models.py:59 dj/quiz/models/models.py:141
+msgid "Answers"
+msgstr "Ответы"
+
+#: dj/quiz/models/models.py:59 dj/quiz/models/models.py:141
+msgid "Divided by coma"
+msgstr "Разделитель запятая"
+
+#: dj/quiz/models/models.py:61
+msgid "Order"
+msgstr "Порядок"
+
+#: dj/quiz/models/models.py:123
+#| msgid "List of questions indexes"
+msgid "Till questions are fineshed."
+msgstr "Пока не закончатся вопросы."
+
+#: dj/quiz/models/models.py:124
+msgid "Infinite quize (looping over questions)."
+msgstr "Бесконечная викторина."
+
+#: dj/quiz/models/models.py:125
+msgid "Custom. Defining question by author."
+msgstr "Пользовательская. Вопрос определяется автором."
+
+#: dj/quiz/models/models.py:135
+msgid "Quiz type"
+msgstr "Тип викторины"
+
+#: dj/quiz/models/models.py:136 dj/quiz/translation.py:33 tmp/room.html:11
+msgid "Quiz"
+msgstr "Викторина"
+
+#: dj/quiz/models/models.py:138
+msgid "Question time"
+msgstr "Время на вопрос "
+
+#: dj/quiz/models/models.py:139
+msgid "Current question number"
+msgstr "Номер текущего вопроса"
+
+#: dj/quiz/models/models.py:140
+msgid "Current question text"
+msgstr "Текст текущего вопроса"
+
+#: dj/quiz/models/models.py:142
+msgid "List of questions indexes"
+msgstr "Список индексов вопросов"
+
+#: dj/quiz/models/models.py:143
+msgid "Winner"
+msgstr "Победитель"
+
+#: dj/quiz/models/models.py:145
+msgid "Token"
+msgstr "Маркер"
+
+#: dj/quiz/models/models.py:232 dj/quiz/models/models.py:242
+#: dj/quiz/models/models.py:251
+msgid "Room"
+msgstr "Комната"
+
+#: dj/quiz/models/models.py:253
+msgid "Score"
+msgstr "Счет"
+
+#: dj/quiz/translation.py:22
+msgid "Quizes theme"
+msgstr "Тема викторины"
+
+#: dj/quiz/translation.py:23 dj/templates/index.html:49
+#: dj/templates/index.html:67
+msgid "Total questions"
+msgstr "Всего вопросов"
+
+#: dj/quiz/translation.py:24
+msgid "Type the answer and press Enter or \"?\" if you give up"
+msgstr "Введите ответ и нажмите Enter"
+
+#: dj/quiz/translation.py:25
+msgid "Next"
+msgstr "Не знаю"
+
+#: dj/quiz/translation.py:26
+msgid "Participants"
+msgstr "Участники"
+
+#: dj/quiz/translation.py:27 tmp/room.html:14
+msgid "Exit"
+msgstr "Выход"
+
+#: dj/quiz/translation.py:28
+msgid "Quiz is compleat."
+msgstr "Викторина окончена."
+
+#: dj/quiz/translation.py:29
+msgid "current_question"
+msgstr "Текущий вопрос"
+
+#: dj/quiz/translation.py:30
+msgid "Your name"
+msgstr "Имя"
+
+#: dj/quiz/translation.py:31
+msgid "Home"
+msgstr "Главная"
+
+#: dj/quiz/translation.py:32
+msgid "My questions"
+msgstr "Мои вопросы"
+
+#: dj/quiz/translation.py:34 dj/templates/index.html:44
+msgid "Active rooms"
+msgstr "Активные комнаты"
+
+#: dj/quiz/translation.py:36
+msgid "Number of users"
+msgstr "Количество пользователей"
+
+#: dj/quiz/translation.py:37
+msgid "Number of questions"
+msgstr "Всего вопросов"
+
+#: dj/quiz/translation.py:39
+msgid "Answer"
+msgstr "Ответы"
+
+#: dj/quiz/translation.py:40 dj/quiz/translation.py:46
+msgid "Edit"
+msgstr "Редактировать"
+
+#: dj/quiz/translation.py:41
+msgid "Delete"
+msgstr "Удалить"
+
+#: dj/quiz/translation.py:43
+msgid "No data"
+msgstr "Не данных"
+
+#: dj/quiz/translation.py:44
+msgid "Total"
+msgstr "Всего"
+
+#: dj/quiz/translation.py:45
+msgid "Current page"
+msgstr "Текущая страница"
+
+#: dj/quiz/translation.py:47
+msgid "Publish"
+msgstr "Опубликовать"
+
+#: dj/quiz/translation.py:48
+msgid "Filter"
+msgstr "Фильтр"
+
+#: dj/quiz/translation.py:49
+msgid "Translate"
+msgstr "Перевести"
+
+#: dj/quiz/translation.py:50
+msgid "Category"
+msgstr "Категория"
+
+#: dj/quiz/translation.py:51
+msgid "Unpublish"
+msgstr "Отменить"
+
+#: dj/quiz/translation.py:52
+msgid "Create question"
+msgstr "Создать вопрос"
+
+#: dj/quiz/translation.py:53 dj/templates/account/profile_form.html:78
+msgid "Save"
+msgstr "Сохранить"
+
+#: dj/quiz/translation.py:54
+msgid "Clear filter"
+msgstr "Очистить фильтр"
+
+#: dj/quiz/translation.py:55
+msgid "Create room"
+msgstr "Создать игровую комнату"
+
+#: dj/quiz/translation.py:56
+msgid "This is required field."
+msgstr "Это поле обязательно."
+
+#: dj/quiz/translation.py:57
+#| msgid "Type of matching"
+msgid "Type of the room"
+msgstr "Тип комнаты."
+
+#: dj/quiz/translation.py:58
+msgid "Join"
+msgstr "Присоединиться"
+
+#: dj/quiz/views/api/room.py:178
+msgid "I don know. Next question please."
+msgstr "Я не знаю. Следующий вопрос пожалуйста."
+
+#: dj/templates/account/activate.html:9
+#: dj/templates/registration/activate.html:9
+msgid "Your account has been successfuly activated."
+msgstr "Ваш аккаунт был успешно активирован."
+
+#: dj/templates/account/activate.html:21 dj/templates/index.html:51
+#: dj/templates/index.html:69
+msgid "Join quiz"
+msgstr "Присоединяйтесь к викторине"
+
+#: dj/templates/account/activate.html:24
+msgid "Wait. You will be redirected after several seconds..."
+msgstr "Ждите. Вы будете перенаправлены через несколько секунд..."
+
+#: dj/templates/account/activate.html:40
+#: dj/templates/account/profile_form.html:36
+#: dj/templates/registration/activate.html:18
+msgid "Edit profile"
+msgstr "Редактировать профиль"
+
+#: dj/templates/account/profile_form.html:40
+msgid "Get image from camera"
+msgstr "Взять изображение из веб камеры"
+
+#: dj/templates/account/profile_form.html:42
+msgid "Take a snapshot"
+msgstr "Сделать снимок"
+
+#: dj/templates/account/profile_form.html:54
+msgid "Avatar"
+msgstr "Аватарка"
+
+#: dj/templates/account/profile_form.html:81
+#: dj/templates/registration/password_reset_confirm.html:65
+msgid "Change password"
+msgstr "Смена пароля "
+
+#: dj/templates/account/register.html:8 dj/templates/account/show.html:8
+#: dj/templates/registration/registration_form.html:14
+msgid "Registration"
+msgstr "Регистрация"
+
+#: dj/templates/account/registration_done.html:9
+msgid ""
+"Registration is compleated. We sent the link of activation on your email. "
+"You have 3 days to activate your account. Othewise, your account will be "
+"deleted."
+msgstr ""
+"Регистрация завершена. Мы отправили ссылку для активации на вашу электронную"
+" почту. У вас есть 3 дня для активации аккаунта. Иначе Ваш аккаунт будет "
+"удален."
+
+#: dj/templates/base.html:14
+msgid "Quizer"
+msgstr "Викторина"
+
+#: dj/templates/base.html:35
+msgid "QUIZER"
+msgstr "Викторина"
+
+#: dj/templates/base.html:40
+msgid "Play"
+msgstr "Играть"
+
+#: dj/templates/base.html:42
+msgid "Catalog"
+msgstr "Каталог"
+
+#: dj/templates/base.html:44
+msgid "Rules"
+msgstr "Правила"
+
+#: dj/templates/base.html:45
+msgid "Contacts"
+msgstr "Контакты"
+
+#: dj/templates/base.html:59 dj/templates/registration/login.html:36
+#: dj/templates/registration/password_reset_complete.html:9
+msgid "Sign in"
+msgstr "Вход"
+
+#: dj/templates/base.html:60 dj/templates/registration/login.html:37
+msgid "Sign up"
+msgstr "Зарегистрируйтесь"
+
+#: dj/templates/base.html:67
+msgid "My profile"
+msgstr "Мой профиль"
+
+#: dj/templates/base.html:68
+msgid "Logout"
+msgstr "Выход"
+
+#: dj/templates/index.html:19
+msgid "How it works"
+msgstr "Как это работает"
+
+#: dj/templates/index.html:50 dj/templates/index.html:68
+msgid "Curent question"
+msgstr "Текст текущего вопроса"
+
+#: dj/templates/index.html:63
+msgid "Popular quizes"
+msgstr "Популярные викторины"
+
+#: dj/templates/registration/activation_email.txt:3
+msgid "Profile activation"
+msgstr "Активация профиля "
+
+#: dj/templates/registration/activation_email.txt:4
+msgid "To finish activation folow the link below."
+msgstr "Для завершения активации пройдите по ссылке ниже."
+
+#: dj/templates/registration/activation_email.txt:5
+msgid "Link"
+msgstr "Ссылка"
+
+#: dj/templates/registration/activation_email_subject.txt:2
+msgid "quizer.com.ua - Account activation."
+msgstr "quizer.com.ua - активация аккаунта."
+
+#: dj/templates/registration/login.html:17
+msgid "Email or password is incorrect!"
+msgstr "Электронная почта или пароль неверны!"
+
+#: dj/templates/registration/login.html:24
+msgid "Please sign in"
+msgstr "Пожалуйста, залогинтесь."
+
+#: dj/templates/registration/login.html:26
+#: dj/templates/registration/password_reset_form.html:14
+msgid "Email address"
+msgstr "Адрес электронной почты "
+
+#: dj/templates/registration/login.html:29
+#: dj/templates/registration/registration_form.html:45
+msgid "Password"
+msgstr "Пароль"
+
+#: dj/templates/registration/login.html:33
+msgid "Login by"
+msgstr "Вход через: "
+
+#: dj/templates/registration/login.html:41
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: dj/templates/registration/password_reset_complete.html:9
+msgid "Your password changed successfully"
+msgstr "Ваш пароль успешно изменен."
+
+#: dj/templates/registration/password_reset_confirm.html:17
+#: dj/templates/registration/password_reset_subject.txt:3
+msgid "Password reset"
+msgstr "Сброс пароля."
+
+#: dj/templates/registration/password_reset_confirm.html:25
+msgid "Your password can`t be too similar to your other personal information."
+msgstr "Ваш пароль не может быть слишком похож на другой."
+
+#: dj/templates/registration/password_reset_confirm.html:26
+msgid "Your password must contain at least 8 characters."
+msgstr "Ваш пароль должен содержать не менее 8 символов."
+
+#: dj/templates/registration/password_reset_confirm.html:27
+msgid "Your password can`t be a commonly used password."
+msgstr "Ваш пароль не может быть часто используемым паролем."
+
+#: dj/templates/registration/password_reset_confirm.html:28
+msgid "Your password can`t be entirely numeric."
+msgstr "Ваш пароль не может быть полностью цифровой."
+
+#: dj/templates/registration/password_reset_confirm.html:52
+msgid "new password"
+msgstr "новый пароль"
+
+#: dj/templates/registration/password_reset_confirm.html:58
+msgid "reapeat password"
+msgstr "повторить пароль"
+
+#: dj/templates/registration/password_reset_confirm.html:74
+msgid "Link is wrong!"
+msgstr "Ссылка неправильная!"
+
+#: dj/templates/registration/password_reset_done.html:11
+msgid "We sent you the link to recover your password."
+msgstr "Мы отправили вам ссылку для восстановления пароля."
+
+#: dj/templates/registration/password_reset_done.html:13
+msgid ""
+"If you don`t recive the letter make sure that yoe email was typed correctly."
+msgstr ""
+"Если Вы не получаете письмо, убедитесь в том, что адрес электронной почты "
+"введен правильно."
+
+#: dj/templates/registration/password_reset_form.html:12
+msgid "Forgot password"
+msgstr "Забыли пароль"
+
+#: dj/templates/registration/password_reset_form.html:18
+#: dj/templates/registration/registration_form.html:64
+msgid "Submit"
+msgstr "Отправить"
+
+#: dj/templates/registration/registration_form.html:55
+msgid "Repeat password"
+msgstr "повторить пароль"
+
+#~ msgid "By time"
+#~ msgstr "По времени"
+
+#~ msgid "By score"
+#~ msgstr "На результат"
+
+#~ msgid "By questions"
+#~ msgstr "По окончанию вопросов"
+
+#~ msgid "Infinite"
+#~ msgstr "Бесконечное"
+
+#~ msgid "<strong>%s gave the correct answer!</strong>"
+#~ msgstr "%s дал правильный ответ!"
+
+#~ msgid "Common quiz room"
+#~ msgstr "Публичная викторина "
+
+#~ msgid "First name"
+#~ msgstr "Имя"
+
+#~ msgid "Last name"
+#~ msgstr "Фамилия"
+
+#~ msgid "Region"
+#~ msgstr "Регион"
+
+#~ msgid "City"
+#~ msgstr "Город"
+
+#~ msgid "Address"
+#~ msgstr "IP-адрес"
+
+#~ msgid "Next question is: %s"
+#~ msgstr "Следующий вопрос: %s"
+
+#~ msgid "Online users"
+#~ msgstr "Пользователи онлайн"
+
+#~ msgid "Answers on the current question"
+#~ msgstr "Ответы на текущий вопрос"
+
+#~ msgid "Content"
+#~ msgstr "Содержание"
+
+#, fuzzy
+#~ msgid "Exitddd"
+#~ msgstr "Выход"

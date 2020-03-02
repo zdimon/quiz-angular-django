@@ -1,0 +1,39 @@
+{% load i18n %}
+
+
+<div class="col-md-12">
+ <h2>{% trans 'Lectures' %}</h2>
+
+  <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>{% trans 'Course' %}</th>
+                        <th>{% trans 'Lesson' %}</th>
+                        <th>{% trans 'Time' %}</th>
+                        <th>{% trans 'Price' %}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for l in lessons %}
+
+                            <tr>
+                                <td><a href="{{ l.course.get_absolute_url }}">{{ l.course }}</a></td>
+                                <td>{{ l.name }}</td>
+                                <td>{{ l.duration }}</td>
+                                <td>{{ l.price_str }}</td>
+                                <td>
+
+                                    {% include "buy_link.html" with l=l %}
+
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                </tbody>
+   </table>
+                    
+
+</div>
+
+

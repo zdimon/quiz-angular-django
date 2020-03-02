@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load thumbnail %}
+{% load staticfiles %}
+       
+{% block js %}
+    {{ block.super }}
+    {{ form.media }}
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block content %}
+
+
+<div class="col-md-12">
+
+
+
+    <div class="well">
+      
+         
+       
+ <form method="post" action="" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h2>{% trans 'Create lesson' %} {% trans 'course' %} {{ course.name }}</h2>
+                
+      <div class="form-body">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form.name.label_tag }}
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                
+                            </span>
+                           {{ form.name|add_class:"form-control" }}
+                        </div>
+                        <span class="error-block">{{ form.name.help_text }}</span>
+                        <span class="help-block">{{ form.name.errors }}</span>
+                    </div>
+                </div>
+                <div class="form-body">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form.desc.label_tag }}
+                        <div class="input-group">
+                           
+                           {{ form.desc|add_class:"form-control" }}
+                        </div>
+                        <span class="error-block">{{ form.desc.help_text }}</span>
+                        <span class="help-block">{{ form.desc.errors }}</span>
+                    </div>
+                </div>
+
+   
+                
+                <div class="form-body">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form.image.label_tag }}
+                        
+                            
+                           {{ form.image|add_class:"form-control" }}
+                           {{ form.cropping }}
+                        
+                        <span class="error-block">{{ form.image.help_text }}</span>
+                        <span class="help-block">{{ form.image.errors }}</span>
+                    </div>
+                </div>     
+
+                 {{ form.owner }} {{ form.course }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn theme-btn" id="registration_save">{% trans 'Save' %}</button>
+                        </div>
+                       
+
+
+                    </div>
+        </form>
+
+
+       <div style="clear: both"></div>
+    </div>
+    
+
+</div>
+
+     
+
+
+{% endblock %}
+

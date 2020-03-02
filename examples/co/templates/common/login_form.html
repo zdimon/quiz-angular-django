@@ -1,0 +1,30 @@
+{% load i18n %}
+<!-- Login form -->
+<form method="post" action="{% url 'django.contrib.auth.views.login' %}" class="form_class">
+    {% csrf_token %}
+<h2> {% trans "Login ino your accounxt" %} </h2>
+
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input name="username" type="text" class="form-control" placeholder="{% trans 'Логин' %}">
+                    </div>                    
+                    <div class="input-group margin-bottom-20">
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input type="password" name="password"  class="form-control" placeholder="{% trans "Пароль" %}">
+
+                        <a href="{% url 'registration_register' %}" class="login-signup-forgot-link">{% trans "Signup" %}</a>
+                    </div>                    
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <button type="submit" class="btn theme-btn pull-right">{% trans "Login" %}</button>                        
+                        </div>
+                    </div>
+
+
+
+</form>
+
+<!-- /Login form -->

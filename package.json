@@ -1,0 +1,60 @@
+{
+  "name": "gamehub",
+  "version": "1.0.0",
+  "description": "Игровая образовательная платформа.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@gitlab.com:zdimon77/gamehub.git"
+  },
+  "author": "zdimon",
+  "license": "ISC",
+  "homepage": "https://gitlab.com/zdimon77/gamehub",
+  "dependencies": {
+    "@angular/common": "~5.0.0",
+    "@angular/compiler": "~5.0.0",
+    "@angular/core": "~5.0.0",
+    "@angular/forms": "~5.0.0",
+    "@angular/http": "~5.0.0",
+    "@angular/platform-browser": "~5.0.0",
+    "@angular/platform-browser-dynamic": "~5.0.0",
+    "@angular/router": "~5.0.0",
+    "@types/jquery": "^3.3.0",
+    "@types/sockjs-client": "^1.1.0",
+    "angular-http": "0.0.0",
+    "bootstrap": "^3.3.7",
+    "core-js": "^2.4.1",
+    "google-translate-api": "^2.3.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9",
+    "redis": "^2.8.0",
+    "request": "^2.83.0",
+    "rxjs": "^5.5.2",
+    "simplewebrtc": "^3.0.1",
+    "sockjs": "^0.3.19",
+    "sockjs-client": "^1.1.4",
+    "tether": "^1.4.3",
+    "webpack-merge": "^4.1.1",
+    "zone.js": "^0.8.14"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.7.0",
+    "@types/node": "^8.0.47",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.3.0",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.19.0",
+    "typescript": "^2.6.0",
+    "uglifyjs-webpack-plugin": "^1.1.7",
+    "webpack": "^3.8.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}

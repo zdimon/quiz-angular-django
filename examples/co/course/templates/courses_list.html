@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load thumbnail %}
+{% load staticfiles %}
+       
+{% block js %}
+    {{ block.super }}
+    {{ form.media }}
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block content %}
+
+
+<div class="col-md-12">
+
+
+
+    <div class="well">
+      
+         
+       
+
+                <h2>{% trans 'List of your courses' %}</h2>
+                
+              
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>{% trans 'Image' %}</th>
+                        <th>{% trans 'Name' %}</th>
+                        <th>{% trans 'Is active' %}</th>
+                        <th>{% trans 'Lessons' %}</th>
+                        <th>{% trans 'Actions' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in courses %}
+                    <tr>
+                        <td>{{ c.thumb }}</td>
+                        <td>{{ c.name }}</td>
+                        <td>{{ c.is_active }}</td>
+                        <td>
+
+                            <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>{% trans 'Image' %}</th>
+                                                    <th>{% trans 'Name' %}</th>
+                                                    <th>{% trans 'Is active' %}</th>
+                                                    <th>{% trans 'Actions' %}</th>
+                                                </tr>
+                                            </thead>
+
+                             {% for l in c.lesson_set.all %}          
+                              
+                                <tr>
+                                 <td>{{ l.thumb }}</td>
+                                 <td>{{ l.name }}</td>
+                                 <td>{{ l.name }}</td>
+                                 <td>
+                                     <a onclick = "if (! confirm('{% trans 'Sure?' %}')) { return false; }" href="{% url 'delete-lesson' lesson_id=l.id %}">{% trans 'Delete lesson' %}</a>
+                                    <a  href="{% url 'lesson-edit' id=l.id %}">{% trans 'Edit lesson' %}</a>
+                                    <a href="{{l.get_absolute_url_for_owner}}">{% trans 'Start lesson' %}</a>
+</td>
+
+                                </tr>
+                             {%  endfor %}           
+                             </table>
+                                <a  class="btn btn-success" href="{% url 'create-lesson' course_id=c.id %}">{% trans 'Create lesson' %}</a>
+                  
+                        </td>
+                        <td> <a class="btn btn-success" href="{% url 'edit-course' course_id=c.id  %}">{% trans 'Edit course' %}</a> </td>
+                       
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>  
+
+
+       <div style="clear: both"></div>
+    </div>
+    
+
+</div>
+
+     
+
+
+{% endblock %}
+

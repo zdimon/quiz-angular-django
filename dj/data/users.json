@@ -1,0 +1,97 @@
+[
+  {
+    "username": "admin",
+    "password": "123",
+    "is_admin": true,
+    "first_name": "Дмитрий",
+    "last_name": "Петров",
+    "middle_name": "Викторович",
+    "wins": 10,
+    "lose": 5,
+    "leave": 1,
+    "all": 16,
+    "coins": 100,
+    "phone": 8800555800,
+    "rating": 100,
+    "birthday": "1990-10-10",
+    "gender": "Мужчина",
+    "country": "Украина"
+
+  },
+  {
+    "username": "test1",
+    "password": "123",
+    "is_admin": false,
+    "first_name": "Дмитрий",
+    "last_name": "Петров",
+    "middle_name": "Викторович",
+    "wins": 10,
+    "lose": 5,
+    "leave": 1,
+    "all": 16,
+    "coins": 100,
+    "phone": 8800555800,
+    "rating": 100,
+    "birthday": "1990-10-10",
+    "gender": "Мужчина",
+    "country": "Украина"
+
+  },
+  {
+    "username": "test2",
+    "password": "123",
+    "is_admin": false,
+    "first_name": "Дмитрий",
+    "last_name": "Петров",
+    "middle_name": "Викторович",
+    "wins": 10,
+    "lose": 5,
+    "leave": 1,
+    "all": 16,
+    "coins": 100,
+    "phone": 8800555800,
+    "rating": 100,
+    "birthday": "1990-10-10",
+    "gender": "Мужчина",
+    "country": "Украина"
+
+  },
+  {
+    "username": "test3",
+    "password": "123",
+    "is_admin": false,
+    "first_name": "Дмитрий",
+    "last_name": "Петров",
+    "middle_name": "Викторович",
+    "wins": 10,
+    "lose": 5,
+    "leave": 1,
+    "all": 16,
+    "coins": 100,
+    "phone": 8800555800,
+    "rating": 100,
+    "birthday": "1990-10-10",
+    "gender": "Мужчина",
+    "country": "Украина"
+
+  },
+  {
+    "username": "test4",
+    "password": "123",
+    "is_admin": false,
+    "first_name": "Дмитрий",
+    "last_name": "Петров",
+    "middle_name": "Викторович",
+    "wins": 10,
+    "lose": 5,
+    "leave": 1,
+    "all": 16,
+    "coins": 100,
+    "phone": 8800555800,
+    "rating": 100,
+    "birthday": "1990-10-10",
+    "gender": "Мужчина",
+    "country": "Украина"
+
+  }
+]

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load compress %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block js %}
+
+        {{ block.super }}
+
+        <script src="{% static 'sockjs-client/dist/sockjs-0.3.4.min.js' %}"></script>
+        <script src="{% url 'course_student_js' lesson_id=lesson.id %}"></script>
+   
+{% endblock %}
+
+
+{% block participants_intop %}
+     <span class="participants_title"> {% trans 'PARTICIPANTS' %} </span><div id="participants"> </div>
+{% endblock %}
+
+{% block js_for_innerpage %} {% endblock %}
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block title %} Online courses {% endblock %}
+
+{% block content %}
+
+<div class="col-md-9" id="left_col">
+
+    <div id="write_board" class="student_writeboard"> <h2 align="center"> {% trans 'Write board' %}  </h2></div>
+    <a  href="#" class="quick_message" data-message="{% trans 'YES' %} ">{% trans 'YES' %}</a>
+    <a  href="#" class="quick_message" data-message="{% trans 'NO' %}">{% trans 'NO' %}</a>
+    <a  href="#" class="quick_message" data-message="{% trans 'I have got it.' %}">{% trans 'I have got it.' %}</a>
+    <a  href="#" class="quick_message yellow" data-message="{% trans 'Can you be more specific please!' %}">{% trans 'Can you be more specific please!' %}</a>
+    <a  href="#" class="quick_message red"  data-message="{% trans 'I dont understand!' %}">{% trans 'I dont understand!' %}</a>
+
+    <a  href="#" class="quick_message" data-message="{% trans 'Thank you very match.' %}">{% trans 'Thank you very match.' %}</a>
+    <a  href="#" class="quick_message" data-message="{% trans 'I have a question!' %}">{% trans 'I have a question!' %}</a>
+</div>
+
+<div class="col-md-3" id="right_col">
+
+    <a href="#" id="hide_right" style="float: left;  font-size: 20px" onclick="return false;"> <span class="glyphicon glyphicon-remove-circle"> </span> </a>
+    <div id="owner_cam"><h3 align="center">{% trans 'Camera is disabled' %}</h3></div>
+
+<!--
+<ul id="chat_text_messages">
+
+</ul>
+-->
+<h3>{% trans 'Chat' %}</h3>
+
+<ul id="chat_text_messages"></ul>
+
+<form align="center">
+
+<textarea name="text_lesson" id="chat_text_input"></textarea>
+<a  href="#" class="btn btn-success" id="send_chat_text" data-replace="yes">{% trans 'Send message' %}</a>
+
+</form>
+  
+
+
+</div>
+
+
+ <div class="col-md-12">    
+
+ <div id="student_cam_list"></div>
+</div>
+
+
+
+
+{% endblock %}
+

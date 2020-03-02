@@ -1,0 +1,81 @@
+../ve/local/lib/python2.7/site-packages/django/contrib/messages/__init__.py:1: [E] PYFLAKES:'from django.contrib.messages.api import *' used; unable to detect undefined names
+../ve/local/lib/python2.7/site-packages/django/contrib/messages/__init__.py:1: [E] PYFLAKES:'django.contrib.messages.api.*' imported but unused
+../ve/local/lib/python2.7/site-packages/django/contrib/messages/__init__.py:2: [E] PYFLAKES:'from django.contrib.messages.constants import *' used; unable to detect undefined names
+../ve/local/lib/python2.7/site-packages/django/contrib/messages/__init__.py:2: [E] PYFLAKES:'django.contrib.messages.constants.*' imported but unused
+main/admin.py:4: [E] PYFLAKES:'django.contrib.admin' imported but unused
+main/views.py:11: [E] PYFLAKES:redefinition of unused 'render' from line 4
+quiz/admin.py:4: [E] PYFLAKES:'django.contrib.admin' imported but unused
+quiz/urls.py:2: [E] PYFLAKES:'django.conf.urls.include' imported but unused
+quiz/urls.py:3: [E] PYFLAKES:'rest_framework.routers' imported but unused
+quiz/models/__init__.py:1: [E] PYFLAKES:'from models import *' used; unable to detect undefined names
+quiz/models/__init__.py:1: [E] PYFLAKES:'models.*' imported but unused
+quiz/management/commands/load_questions.py:2: [E] PYFLAKES:'django.core.management.base.CommandError' imported but unused
+quiz/management/commands/get_questions.py:4: [E] PYFLAKES:'django.core.management.base.CommandError' imported but unused
+quiz/management/commands/get_questions.py:34: [E] PYFLAKES:local variable 'questions' is assigned to but never used
+account/models.py:11: [E] PYFLAKES:redefinition of unused 'post_save' from line 7
+account/api.py:4: [E] PYFLAKES:'django.shortcuts.render' imported but unused
+account/api.py:5: [E] PYFLAKES:'rest_framework.views.APIView' imported but unused
+account/api.py:8: [E] PYFLAKES:'rest_framework.authentication.BasicAuthentication' imported but unused
+account/api.py:8: [E] PYFLAKES:'rest_framework.authentication.TokenAuthentication' imported but unused
+account/api.py:8: [E] PYFLAKES:'rest_framework.authentication.SessionAuthentication' imported but unused
+account/api.py:9: [E] PYFLAKES:'rest_framework.permissions.IsAuthenticated' imported but unused
+account/admin.py:4: [E] PYFLAKES:'django.contrib.admin' imported but unused
+account/forms.py:1: [E] PYFLAKES:'django.forms.TextInput' imported but unused
+account/views.py:9: [E] PYFLAKES:'django.shortcuts.redirect' imported but unused
+account/views.py:12: [E] PYFLAKES:'django.contrib.auth.authenticate' imported but unused
+account/views.py:13: [E] PYFLAKES:'registration.signals.user_activated' imported but unused
+account/views.py:16: [E] PYFLAKES:'django.views.generic.edit.CreateView' imported but unused
+account/views.py:16: [E] PYFLAKES:'django.views.generic.edit.DeleteView' imported but unused
+account/views.py:20: [E] PYFLAKES:'django.contrib.auth.decorators.login_required' imported but unused
+account/urls.py:2: [E] PYFLAKES:'django.conf.urls.include' imported but unused
+account/urls.py:4: [E] PYFLAKES:'from .views import *' used; unable to detect undefined names
+account/urls.py:9: [E] PYFLAKES:'show' may be undefined, or defined from star imports: [E] PYFLAKES:.views
+account/urls.py:10: [E] PYFLAKES:'MyRegistrationView' may be undefined, or defined from star imports: [E] PYFLAKES:.views
+account/urls.py:11: [E] PYFLAKES:'ProfileEditView' may be undefined, or defined from star imports: [E] PYFLAKES:.views
+account/urls.py:12: [E] PYFLAKES:'registration_done' may be undefined, or defined from star imports: [E] PYFLAKES:.views
+account/urls.py:13: [E] PYFLAKES:'activation_done' may be undefined, or defined from star imports: [E] PYFLAKES:.views
+account/urls.py:14: [E] PYFLAKES:'MyActivationView' may be undefined, or defined from star imports: [E] PYFLAKES:.views
+account/urls.py:20: [E] PYFLAKES:redefinition of unused 'routers' from line 3
+account/urls.py:20: [E] PYFLAKES:'rest_framework.routers' imported but unused
+account/tests.py:5: [E] PYFLAKES:'requests' imported but unused
+account/tests.py:6: [E] PYFLAKES:'json' imported but unused
+account/tests.py:8: [E] PYFLAKES:'from .api import *' used; unable to detect undefined names
+account/tests.py:15: [E] PYFLAKES:'dj.settings.TEST_URL' imported but unused
+account/tests.py:50: [E] PYFLAKES:'logout' may be undefined, or defined from star imports: [E] PYFLAKES:.api
+account/management/commands/load_users.py:1: [E] PYFLAKES:'django.core.management.base.CommandError' imported but unused
+billing/models.py:4: [E] PYFLAKES:'django.db.models' imported but unused
+billing/admin.py:4: [E] PYFLAKES:'django.contrib.admin' imported but unused
+billing/views.py:4: [E] PYFLAKES:'django.shortcuts.render' imported but unused
+billing/tests.py:4: [E] PYFLAKES:'django.test.TestCase' imported but unused
+socket_server/tornado_app.py:6: [E] PYFLAKES:'tornado.web' imported but unused
+socket_server/tornado_app.py:7: [E] PYFLAKES:'time' imported but unused
+socket_server/tornado_app.py:12: [E] PYFLAKES:'django.core.exceptions.ObjectDoesNotExist' imported but unused
+socket_server/tornado_app.py:17: [E] PYFLAKES:'os' imported but unused
+socket_server/tornado_app.py:69: [E] PYFLAKES:undefined name 'Users2Lesson'
+socket_server/management/commands/socketserver.py:1: [E] PYFLAKES:'optparse.make_option' imported but unused
+../ve/src/easy-thumbnails/easy_thumbnails/templatetags/easy_thumbnails_tags.py:8: [E] PYFLAKES:'from .thumbnail import *' used; unable to detect undefined names
+../ve/src/easy-thumbnails/easy_thumbnails/templatetags/easy_thumbnails_tags.py:8: [E] PYFLAKES:'.thumbnail.*' imported but unused
+../ve/src/easy-thumbnails/easy_thumbnails/tests/test_management.py:11: [E] PYFLAKES:'easy_thumbnails.management.commands.thumbnail_cleanup' imported but unused
+../ve/local/lib/python2.7/site-packages/image_cropping/__init__.py:1: [E] PYFLAKES:'.fields.ImageCropField' imported but unused
+../ve/local/lib/python2.7/site-packages/image_cropping/__init__.py:1: [E] PYFLAKES:'.fields.ImageRatioField' imported but unused
+../ve/local/lib/python2.7/site-packages/image_cropping/__init__.py:2: [E] PYFLAKES:'.admin.ImageCroppingMixin' imported but unused
+../ve/local/lib/python2.7/site-packages/image_cropping/__init__.py:3: [E] PYFLAKES:'.widgets.ImageCropWidget' imported but unused
+../ve/local/lib/python2.7/site-packages/image_cropping/config.py:3: [E] PYFLAKES:'django.conf.settings' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/serializers.py:54: [E] PYFLAKES:'rest_framework.fields.SerializerMethodField' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/serializers.py:54: [E] PYFLAKES:'rest_framework.fields.MultipleChoiceField' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/serializers.py:54: [E] PYFLAKES:'rest_framework.fields.RegexField' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/serializers.py:61: [E] PYFLAKES:'rest_framework.relations.RelatedField' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/serializers.py:61: [E] PYFLAKES:'rest_framework.relations.ManyRelatedField' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/serializers.py:61: [E] PYFLAKES:'rest_framework.relations.StringRelatedField' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/serializers.py:67: [E] PYFLAKES:'rest_framework.fields.CurrentUserDefault' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/serializers.py:70: [E] PYFLAKES:'rest_framework.relations.Hyperlink' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/apps.py:10: [E] PYFLAKES:'.checks.pagination_system_check' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/compat.py:26: [E] PYFLAKES:'django.urls.RegexURLPattern as URLPattern' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/compat.py:177: [E] PYFLAKES:'guardian' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/compat.py:280: [E] PYFLAKES:'pytz' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/compat.py:289: [E] PYFLAKES:'django.conf.urls.include' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/schemas/__init__.py:26: [E] PYFLAKES:'.inspectors.AutoSchema' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/schemas/__init__.py:26: [E] PYFLAKES:'.inspectors.ManualSchema' imported but unused
+../ve/local/lib/python2.7/site-packages/rest_framework/schemas/__init__.py:26: [E] PYFLAKES:'.inspectors.DefaultSchema' imported but unused
+../ve/local/lib/python2.7/site-packages/widget_tweaks/templatetags/widget_tweaks.py:3: [E] PYFLAKES:'django.template.Variable' imported but unused
+../ve/local/lib/python2.7/site-packages/widget_tweaks/templatetags/widget_tweaks.py:140: [E] PYFLAKES:local variable 'tag_name' is assigned to but never used

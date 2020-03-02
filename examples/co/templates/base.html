@@ -1,0 +1,192 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% load compress %}
+{% get_current_language as LANGUAGE_CODE %}  
+
+{% block style %}
+
+    {% compress css %}
+           <!-- BEGIN GLOBAL MANDATORY STYLES -->
+           <link href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"/>
+           <link href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+           <link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css"/>
+           <link rel="shortcut icon" href="/static/fav.png" type="image/x-icon" />
+
+           <!-- END GLOBAL MANDATORY STYLES -->
+
+           <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+
+           <link href="{% static 'assets/plugins/uniform/css/uniform.default.css' %}" rel="stylesheet" type="text/css"/>
+           <!-- END PAGE LEVEL PLUGIN STYLES -->
+
+           <!-- BEGIN THEME STYLES -->
+           <link href="{% static 'assets/css/style-metronic.css' %}" rel="stylesheet" type="text/css"/>
+           <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css"/>
+           <link href="{% static 'assets/css/themes/blue.css' %}" rel="stylesheet" type="text/css" id="style_color"/>
+           <link href="{% static 'assets/css/style-responsive.css' %}" rel="stylesheet" type="text/css"/>
+           <link href="{% static 'assets/css/custom.css' %}" rel="stylesheet" type="text/css"/>
+           <!-- END THEME STYLES -->
+            <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+    {% endcompress %}
+
+{% endblock %}
+
+{% block js %}
+    {% compress js %}
+        <script src="{% static 'assets/plugins/jquery-1.10.2.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/plugins/jquery-migrate-1.2.1.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/jquery.serializeObject.js' %}"></script>
+        <script src="{% static 'js/jquery.scrollTo-1.4.3.1-min.js' %}"></script>
+        <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/sockjs-0.3.min.js' %}"></script>
+        <script src="{% static 'assets/plugins/hover-dropdown.js' %}" type="text/javascript"></script> 
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+    {% endcompress %}
+   
+
+    {% block js_for_innerpage %}
+       {% if user.is_authenticated %}
+        <script src="{% url 'js_for_innerpage' %}"></script>
+       {% endif %}
+    {% endblock %}
+
+{% endblock %}
+
+
+
+{% block body %}
+      <audio id="audio_alert" src="/static/alert.mp3" preload="auto"></audio>
+      <audio id="audio_alert_chat" src="/static/alert2.mp3" preload="auto"></audio>
+      <audio id="audio_alert_event" src="/static/alert3.mp3" preload="auto"></audio>
+      {% block incubator %} {% endblock %}
+      <a href="#" id="show_top" style="float: left; display: none;  font-size: 28px" onclick="return false;"> <span class="glyphicon glyphicon-resize-full"> </span> </a>
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <!--<a href="#" id="hide_top" style="float: left;  font-size: 28px" onclick="return false;"> <span class="glyphicon glyphicon-remove-circle"> </span> </a>-->
+          <div class="container">
+            
+            <div class="navbar-header navbar-collapse collapse">
+              <a class="navbar-brand" style="padding-top: 5px" href="/"> <img src="/static/logo.png" /></a>
+              <a class="navbar-brand" href="/">{% trans 'Mastery school' %}</a>
+            </div>
+            <div  style="margin-top: 5px">
+            
+		        {% if user.is_authenticated %}
+                   
+                    
+                   <a title="{{ request.user.user_name }}" id="avatar" href="{% url 'cabinet' %}" class="pull-left">{{ request.user.thumb }}</a>
+                   
+                    {% if user.is_teacher %}
+                     &nbsp; <a class="btn btn-primary" style="height: 50px; padding-top: 15px" href="{% url 'list-vcourse' %}">{% trans 'My video courses' %}</a>
+                    {% else %}
+
+                    &nbsp; <a class="btn btn-primary" style="height: 50px; padding-top: 15px" href="{% url 'library-vcourse' %}">{% trans 'My library' %}</a>
+
+                    {% endif %}
+
+
+                   <a id="logout" href="{% url 'logout' %}" class="btn btn-success pull-right">{% trans 'Logout' %}</a>
+                  
+                {% else %}
+                  
+                 <form class="navbar-form navbar-right" action="{% url 'login' %}" method="POST">
+                    <span class="navbar-brand">{% trans 'Войти с помощью' %}</span>
+                    <a href="{% url "socialauth_begin" "vk-oauth" %}"> <img src="/static/images/vk.jpg" /> </a>
+                    <a href="{% url "socialauth_begin" "facebook" %}"> <img src="/static/images/fb.png" /> </a>
+                    <a href="{% url "socialauth_begin" "google-oauth2" %}"> <img src="/static/images/google.png" /> </a>
+                    {% csrf_token %}
+                        <div class="form-group">
+                          <input name="username" type="text" class="top_input" placeholder="login" style="" >
+                        </div>
+                        <div class="form-group">
+                          <input name="password" type="password" placeholder="password" class="top_input">
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" name="enter" class="btn btn-success">{% trans 'Sign in' %}</button>
+                        </div>
+                         <a id="registration" class="btn btn-success" href="{% url 'registration_register' %}">{% trans 'Registration' %}</a>
+                  </form>
+                {% endif %}
+                
+                {% block participants_intop %}  {% endblock %}
+               
+                <ul class="nav navbar-nav" style="float: right">
+                        {% if LANGUAGE_CODE == 'en' %}
+                        <li>
+                            <a href="{% url 'main.views.change_language' %}?language=ru&next={{request.get_full_path}}">
+                               <img src="{% static "ru.png" %}" title="{% trans 'Russian' %}" />
+                            </a>
+                         </li>
+                        {% endif %}
+        
+                        {% if LANGUAGE_CODE == 'ru' %}
+                         <li>
+                            <a href="{% url 'main.views.change_language' %}?language=en&next={{request.get_full_path}}">
+                               <img src="{% static "uk.png" %}" title="{% trans 'English' %}" />
+                            </a>                           
+                        </li>
+                        {% endif %}
+                </ul>
+                    
+                
+
+            </div><!--/.navbar-collapse -->
+             
+          </div>
+            
+      </div>
+
+      <div id="calling_popup"></div>
+
+        <!-- BEGIN PAGE CONTAINER -->
+    <div class="page-container" style="margin-top: 60px;"  id="center_container">
+
+        
+
+        {% block bredcrumbs %}
+            <!-- BEGIN BREADCRUMBS -->
+            <div class="row breadcrumbs" >
+                <div class="container">
+                    <div class="col-md-3 col-sm-3">
+                        <h1>Lesson</h1>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                         
+                        
+                        <div class="div_uploaded_img" id="from_publisher"> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END BREADCRUMBS -->
+        {% endblock %}
+
+        <!-- BEGIN CONTAINER -->
+        <div  class="container margin-bottom-40" style="margin-top: 10px">
+         
+          <div class="row">
+                            <!-- {% block running_lesson %} <div id="running_lesson"> </div>  {% endblock %} -->
+
+                            {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                            </div>
+                            {% endfor %}
+                <div id="center_container">
+                {% block content %} {% endblock %}
+                </div>
+
+          </div>
+        </div>
+        <!-- END CONTAINER -->
+    </div>
+    <!-- END PAGE CONTAINER -->
+
+
+
+
+
+
+
+{% endblock %}
+

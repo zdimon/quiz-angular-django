@@ -1,0 +1,7 @@
+git add --all
+git commit -m 'Auto'
+git push
+ssh -t zdimon@quizer.com.ua "cd gamehub; git pull"
+ssh -t zdimon@quizer.com.ua "cd gamehub; . ./ve/bin/activate;  pip install -r requirements.txt"
+ssh -t zdimon@quizer.com.ua "cd gamehub/dj; . ../ve/bin/activate;  ./manage.py migrate"
+ssh -t zdimon@quizer.com.ua "cd gamehub; npm install"

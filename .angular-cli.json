@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "quizer"
+  },
+  "apps": [
+    {
+      "root": "js_apps",
+      "outDir": "dist",
+      
+      "scripts": []
+    }
+  ],
+  
+  "defaults": {
+    "styleExt": "css",
+    "component": {}
+  }
+}

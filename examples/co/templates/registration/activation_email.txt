@@ -1,0 +1,4 @@
+
+Registration
+To finish your registration follow this link please:
+<a href="http://{{ site }}/accounts/activate/{{ activation_key }}/">Activation link </a>

@@ -1,0 +1,51 @@
+-----BEGIN RSA PRIVATE KEY-----
+MIICXQIBAAKBgQDUm4sdP0MR1jpy7lBeaG76JLxJGFqQnl8S34ry/xLVFG0u9SuR
+adrjQ6CWpXdsNVA1OjFOxyF58wSlzswAW0oiouqc8vz/PRLGgKYGigcn+FKLHtpa
+j7At0/ynG3Rs53pMFJXIqUtgZgDxeSnu/qSC2M8j4H7dp/ETRVV6UizjmQIDAQAB
+AoGATqtHbIkODjmQ4xofju9hsRmKuhlS2ZRgZaFlzshndYTbaba6alIa9mD9uQB9
+EgMgLLHdsOKqFm+/1oKQpckhwsZ3efsbfQSIS4ph+thRpLWTPCAIp7VmHePzDL2W
+YIuY92ZA7qbwQD3jJguj33WrvdcDjyJgmxbzduLRlBo8mMkCQQDxqEOVG/HQjJe/
+VkcI7JkNhEyS6+oOH+A1uNlvIC+ro6kAnr6Cr8L8hGKDLxtXxJGmbtlBog6J2uL8
+0iLN8SAXAkEA4TnmJQwkwQb5PyGfmUtnYUttyPZGeABL0qiMnbTv6q8Ei7IS3zwr
+e5Dpl6VehP8GuXdNtCswCGBRyYg6/ok3zwJBAL5oLEfyqsf93xs9qd7YPYgu8/7X
+r6XNa+YobfpnS+hbnbAFZGqofmRlExH2Lf8rvO98a+aRAA+SzkMSd6X5FaUCQGZO
+D31ak8NecI89rapLNw1Z3ud+/ql5sPdiemUUkDow/8aYv7vJMBMz0veANXwB/8L1
+L0WcrHfRkLUTfYCrQb8CQQDtlUDTc9YB7TPaPwr6wTXvzrnHVvpH8+mGMK3VUUhM
+qaQHRNiHFDX0z1GVU6hJnIav4hwPop217tH8+HZfKzPO
+-----END RSA PRIVATE KEY-----
+
+Public key
+This is the public key that needs to be published via DNS before you start using the tokens to send mail.
+
+Bind 9 Format
+This is the public key in a format for use in a bind 9 zone file
+
+1519311080.quizer._domainkey.quizer.com.ua. IN TXT (
+        "v=DKIM1;t=s;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDUm4sdP0MR1jpy7lBeaG76JLxJ"
+        "GFqQnl8S34ry/xLVFG0u9SuRadrjQ6CWpXdsNVA1OjFOxyF58wSlzswAW0oiouqc"
+        "8vz/PRLGgKYGigcn+FKLHtpaj7At0/ynG3Rs53pMFJXIqUtgZgDxeSnu/qSC2M8j"
+        "4H7dp/ETRVV6UizjmQIDAQAB")
+Download bind format key
+
+Tinydns Format
+This is the public key in a format for use in a tinydns zone file
+
+'1519311080.quizer._domainkey.quizer.com.ua:v=DKIM1;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDUm4sdP0MR1jpy7lBeaG76JLxJGFqQnl8S34ry/xLVFG0u9SuRadrjQ6CWpXdsNVA1OjFOxyF58wSlzswAW0oiouqc8vz/PRLGgKYGigcn+FKLHtpaj7At0/ynG3Rs53pMFJXIqUtgZgDxeSnu/qSC2M8j4H7dp/ETRVV6UizjmQIDAQAB:3600::
+Download tinydns format key
+
+Raw format
+This is the public key in the original raw "X509" format. It's not usable in DNS directly, but it might be useful for something.
+
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDUm4sdP0MR1jpy7lBeaG76JLxJ
+GFqQnl8S34ry/xLVFG0u9SuRadrjQ6CWpXdsNVA1OjFOxyF58wSlzswAW0oiouqc
+8vz/PRLGgKYGigcn+FKLHtpaj7At0/ynG3Rs53pMFJXIqUtgZgDxeSnu/qSC2M8j
+4H7dp/ETRVV6UizjmQIDAQAB
+-----END PUBLIC KEY-----
+Download public key
+
+
+
+
+http://xn--i1abbnckbmcl9fb.xn--p1ai/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8/412386/
+https://childage.ru/dosug/chem-zanyat-rebenka/krossvordyi-dlya-detey-10-let-s-otvetami-i-voprosami.html

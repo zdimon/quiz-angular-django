@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load i18n %}
+{% load thumbnail %}
+{% load staticfiles %}
+       
+{% block js %}
+    {{ block.super }}
+    {{ form.media }}
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'django_ajax/js/jquery.ajax-plugin.min.js' %}"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
+{% endblock %}
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block content %}
+
+
+<div class="col-md-6">
+
+
+
+    <div class="well">
+      
+         {{ request.user.thumb }}
+       
+ <form method="post" action="" enctype="multipart/form-data">
+                <h2>{% trans 'My profile' %}</h2>
+                
+                {% csrf_token %}
+               
+
+                <div class="form-body">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form.email.label_tag }}
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon-ok"></i>
+                            </span>
+                           {{ form.email|add_class:"form-control" }}
+                        </div>
+                        <span class="error-block">{{ form.email.help_text }}</span>
+                        <span class="help-block">{{ form.email.errors }}</span>
+                    </div>
+                </div>
+
+
+                <div class="form-body">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form.first_name.label_tag }}
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon-ok"></i>
+                            </span>
+                           {{ form.first_name|add_class:"form-control" }}
+                        </div>
+                        <span class="error-block">{{ form.first_name.help_text }}</span>
+                        <span class="help-block">{{ form.first_name.errors }}</span>
+                    </div>
+                </div>
+
+
+
+                <div class="form-body">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form.last_name.label_tag }}
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon-ok"></i>
+                            </span>
+                           {{ form.last_name|add_class:"form-control" }}
+                        </div>
+                        <span class="error-block">{{ form.last_name.help_text }}</span>
+                        <span class="help-block">{{ form.last_name.errors }}</span>
+                    </div>
+                </div>
+
+
+                <div class="form-body">
+                    <div class="form-group {%if form.desc.errors %}alert alert-danger{%endif%}">
+                        {{ form.desc.label_tag }}
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon-ok"></i>
+                            </span>
+                           {{ form.desc|add_class:"form-control" }}
+                        </div>
+                        <span class="error-block">{{ form.desc.help_text }}</span>
+                        <span class="help-block">{{ form.desc.errors }}</span>
+                    </div>
+                </div>
+
+
+                <div class="form-body">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form.phone.label_tag }}
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="glyphicon-ok"></i>
+                            </span>
+                           {{ form.phone|add_class:"form-control" }}
+                        </div>
+                        <span class="error-block">{{ form.phone.help_text }}</span>
+                        <span class="help-block">{{ form.phone.errors }}</span>
+                    </div>
+                </div>
+
+
+
+                <div class="form-body">
+                    <div class="form-group {%if form.email.errors %}alert alert-danger{%endif%}">
+                        {{ form.image.label_tag }}
+                        
+                            
+                           {{ form.image|add_class:"form-control" }}
+                           {{ form.cropping }}
+                        
+                        <span class="error-block">{{ form.image.help_text }}</span>
+                        <span class="help-block">{{ form.image.errors }}</span>
+                    </div>
+                </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn theme-btn" id="registration_save">{% trans 'Save' %}</button>
+                        </div>
+                    </div>
+
+            </form>
+
+            
+            
+
+
+       <div style="clear: both"></div>
+    </div>
+    <div class="well" style="text-align: center">
+        <a  href="#" onclick="return false" class="btn btn-success" id="take_pic_from_cam" >{% trans 'Take a picture from your webcamera' %}</a>
+
+        <div id="my_cam"> </div>
+    
+    </div>
+
+</div>
+
+<div class="col-md-6">
+
+<!--
+ <div class="well">
+  <h2>{% trans 'My courses' %}</h2>
+
+    {% for l in lessons %}
+       <h2> {{ l.lesson.thumb }} {{ l.lesson }} </h2>
+        {% if request.user.id == l.lesson.owner.id %}
+           <a class="btn btn-success" href="{{l.lesson.get_absolute_url_for_owner}}">{% trans 'Start lesson' %}</a>
+           <a class="btn btn-success red" onclick = "if (! confirm('Sure?')) { return false; }" href="{% url 'clear-lesson' lesson_id=l.lesson.pk %}">{% trans 'Clear lesson' %}</a>
+           <a class="btn btn-success" href="{% url 'lesson-edit' id=l.lesson.id %}">{% trans 'Edit lesson' %}</a>
+        {% endif %}
+        <a class="btn btn-success" href="{{l.lesson.get_absolute_url_for_student}}">{% trans 'Enter to this lesson' %}</a>
+    {% endfor %}
+
+</div>
+
+{% if request.user.is_teacher == True %}
+<div style="padding: 10px;">
+  <a class="btn btn-success" href="{% url 'create-course' %}">{% trans 'Create new course' %}</a>
+   <a class="btn btn-success" href="{% url 'list-courses' %}">{% trans 'List of your courses' %}</a>
+</div>
+
+
+
+{% endif %}
+
+ <div class="well">
+  <h2>{% trans 'Available courses' %}</h2>
+
+    {% for c in courses %}
+       
+        <div style="display: inline-block; width: 150px; height: 150px;"><a href="{{ c.get_absolute_url }}">{{ c.thumb }}</a></div>
+  <div style="display: inline-block;"> <h3><a href="{{ c.get_absolute_url }}">{{ c.name }}</a></h3>
+   {{ c.desc|safe }}
+        
+
+    {% endfor %}
+
+</div>
+-->
+
+
+    <div style="padding: 10px;">
+      <a class="btn btn-success" href="{% url 'create-vcourse' %}">{% trans 'Create new video course' %}</a>
+      <a class="btn btn-success" href="{% url 'list-vcourse' %}">{% trans 'My video courses' %}</a>
+    </div>
+
+    <h2>{% trans 'My video courses' %}</h2>
+    <div>
+        {% for vc in vcourses %}
+            <div class="well">
+                <h3> {{ vc.name }} </h3>
+                <div style="float: left; padding-right: 10px">{{ vc.thumb }}</div>
+                {{ vc.desc | safe }}
+                <a href="{% url 'edit-vcourse' id=vc.id %}">{% trans 'Edit video cours' %}</a> 
+                <a href="{% url 'add-lecture' course_id=vc.id %}">{% trans 'Add lecture' %}</a> 
+                <div style="clear: both"> </div>
+                <h3> {% trans 'Lections' %} </h3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'Name' %}</th>
+                                    <th></th>
+                                </tr>
+                                {% for l in vc.vlesson_set.all %}
+                                <tr>
+                                    <td>{{ l.name }}</td>
+                                    <td>{{ l.name }}</td>
+                                </tr>
+                                {% endfor %}
+
+                        </table>
+                
+
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+</div>
+
+     
+
+
+{% endblock %}
+

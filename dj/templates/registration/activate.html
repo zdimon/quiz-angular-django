@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="container">
+        
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="alert alert-success acenter" role="alert">
+                        <h4 class="title">{% trans 'Your account has been successfuly activated.' %}</h4>
+                    </div>
+                </div>    
+            </div>
+        </div> 
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 acenter">
+                  
+                <a href="{% url 'profile_edit' %}" class="btn btn-primary"> {% trans 'Edit profile' %} </a>
+                    
+            </div>
+        </div>
+
+           
+       
+</div>
+{% endblock %}
+{% block sidebar %}  {% endblock %}

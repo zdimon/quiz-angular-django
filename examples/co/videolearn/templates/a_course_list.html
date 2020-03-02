@@ -1,0 +1,104 @@
+{% load i18n %}
+
+
+<div class="col-md-12">
+ <h2>{% trans 'My courses' %}</h2>
+
+
+
+  <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th width="10%">{% trans 'Course' %}</th>
+                        <th>{% trans 'Lessons' %}</th>
+              
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in courses %}
+                    <tr>
+                        <td>
+
+                            {{ c.thumb }}
+                            <p>{{ c.name }}</p>
+                            <p>{% trans 'Published' %}: {{ c.is_active }}</p>
+                            <a class="btn btn-warning" onclick="return confirm('{% trans 'Are u sure?' %}') ? true : false;" href="{% url 'delete-vcourse' id=c.id %}"><span class="glyphicon glyphicon-remove"></span></a>
+                            <a class="btn btn-warning" href="{% url 'edit-vcourse' id=c.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                        </td>
+
+                        <td>
+
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>{% trans 'Screenshot' %}</th>
+                                            <th>{% trans 'Info' %}</th>
+                                            <th>{% trans 'Show' %}</th>
+                                        </tr>                                        
+                                    </thead>
+                                    {% for l in c.vlesson_set.all %}
+                                        <tr>
+                                            <td> <a href="{% url 'vcourse-preview' id=l.id %}" target=_blank>{{ l.screenshot }} </a></td>
+                                            <td> 
+                                             <p> {{ l.name }}  </p>
+                                             <p> <strong>{% trans 'Duration' %}:</strong> {{ l.duration }} </p>
+                                             <p> <strong>{% trans 'Price' %}:</strong>{{ l.price_str }} </p>
+                                             <p> <strong>{% trans 'Articles' %}:</strong>
+                                                
+                                                <table class="table table-striped">
+                                                    {% for a in l.varticles_set.all %}    
+                                                        <tr> 
+                                                            <td>{{ a.name }}</td>
+                                                            <td><a href="{{ a.get_absolute_url }}">{{ a.name }}</a></td>
+                                                            <td><a href="{% url 'edit-article' id=a.id lesson_id=l.id %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                </table>
+                                                        <a class="btn btn-primary pull-left" href="{% url 'add-article' lesson_id=l.id %}">
+                                                         {% trans 'Add article' %}
+                                                         </a>                                                
+                                             </p>
+                                            </td>
+                                            <td>
+                                                <div class="btn-toolbar" role="toolbar">
+                                                    <div class="btn-group" role="group">
+                                                        <a class="btn btn-primary pull-left" href="{% url 'edit-lecture' id=l.id course_id=c.id %}">
+                                                         <span class="glyphicon glyphicon-pencil"></span>
+                                                          </a> 
+                                                    </div>
+                                                    <!--<a href="#" class="test_show" data-id="{{ c.id }}"> {% trans 'Show' %} </a>-->
+                                                    {% if l.is_converted %}
+                                                    <div class="btn-group" role="group">
+                                                        <a class="btn btn-primary pull-right" href="{% url 'vcourse-preview' id=l.id %}" target=_blank>
+
+
+
+                                                        <span class="glyphicon glyphicon-eye-open"></span></a>
+
+                                                        <a class="btn btn-warning" onclick="return confirm('{% trans 'Are u sure?' %}') ? true : false;" href="{% url 'delete-lecture' lecture_id=l.id %}"><span class="glyphicon glyphicon-remove"></span></a>
+
+                                                        
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            
+ 
+
+<a class="btn btn-primary" href="{% url 'add-lecture' course_id=c.id %}">{% trans 'Add lecture' %}</a> 
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+
+
+
+
+</div>
+
+

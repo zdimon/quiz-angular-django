@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block angular_js %}
+
+    <script src="/static/js/account.js"></script>
+    
+{% endblock %}
+{% load cropping %}
+{% block content %}
+{{ form.media }}
+
+<div class="container main-container">
+    <div class="form-wrapper">
+            
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+                {% if form.errors %}
+                    <div class="row">
+                            <div class="alert alert-danger" role="alert">
+                                <span class="fa fa-exclamation" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>
+                                {% for error in form.errors %}
+                                    <p>{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                    </div>   
+                {% endif %}
+            
+        
+                <form enctype="multipart/form-data" id="basic-information" class="profile-forms basic-information" method="post" action="">
+                    {% csrf_token %}
+                    {{ form.user }}
+                    <h4 class="title">{% trans 'Edit profile' %} ({{ form.instance.get_username }})</h4>
+                    <div class="form-group">
+                            <video id="video_cam" autoplay style="display: none"></video>
+                            <canvas id="canvas" style="display: none"></canvas>
+                            <a id="turn_video" class="btn btn-success" href="#">{% trans 'Get image from camera' %}</a>
+                            <p>
+                            <a id="capture" class="btn btn-success" style="display: none" href="#">{% trans 'Take a snapshot' %}</a>
+                        </p>
+                    </div>
+                    <div class="form-group" id="thumb">
+                        
+                        {{ form.instance.thumbnail|safe }}
+                        {{ form.cropping }}
+                       
+                                
+                    </div>    
+                    
+                    <div class="form-group">
+                        <label>{% trans 'Avatar' %}</label>
+                        {{ form.avatar }}
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label>{% trans 'Country' %}</label>
+                        
+                            {{ form.country|add_class:"form-control" }}
+                    </div> 
+
+                    <div class="form-group">
+                        <label>{% trans 'Gender' %}</label>        
+                        {{ form.gender|add_class:"form-control" }}
+                    </div> 
+
+                    <div class="form-group">
+                        <label>{% trans 'Birthday' %}</label>        
+                        {{ form.birthday|add_class:"form-control" }}
+                    </div>            
+
+
+                    <div class="row profile-actions">
+                        <div class="col-sm-4 text-left">
+                            <input type="submit" class="btn btn-success" value="{% trans 'Save' %}">
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-4 text-right">
+                            <a class="add-field" href="{% url 'password_reset' %}"><i class="fa fa-plus"></i>{% trans 'Change password' %}</a>
+                        </div>
+                    </div>
+
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+
+       
+{% endblock %}
+
+
+{% block footer %}{% endblock %}
+

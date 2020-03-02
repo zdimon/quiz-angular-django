@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="container">
+        
+        <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="alert alert-success acenter" role="alert">
+                        <h4 class="title">{% trans 'Your account has been successfuly activated.' %}</h4>
+                    </div>
+                </div>    
+            </div>
+        </div> 
+
+
+        {% if token %}
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3" style="text-align: center">
+                <a id="clickme" class="btn btn-primary btn-lg" href="ru/quiz/#room/{{ token }}">
+                    {% trans 'Join quiz' %}
+                </a>
+                <br /><br /><br />
+                {% trans 'Wait. You will be redirected after several seconds...' %}
+                <script>
+                    setTimeout(function(){
+                        window.location = document.getElementById("clickme").getAttribute("href");
+                    },3000)
+                    
+                </script>
+            </div>
+              
+        </div>
+
+        {% endif %}        
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 acenter">
+                  
+                <a href="{% url 'profile_edit' %}" class="btn btn-primary"> {% trans 'Edit profile' %} </a>
+                    
+            </div>
+        </div>
+
+           
+       
+</div>
+{% endblock %}
+{% block sidebar %}  {% endblock %}

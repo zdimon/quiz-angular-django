@@ -1,0 +1,40 @@
+<div class="form-horizontal edit-question">
+    <div class="form-group">
+        <div class="col-md-6">
+                RU:<textarea [(ngModel)]='obj.question_ru' type="text" class="form-control"> </textarea> 
+                <br />
+                <p><a (click)="translate('en-ru','question',obj.id)">{{ i18n?.translate }}</a></p>
+                <input [(ngModel)]='obj.answers_ru' type="text" class="form-control" /> 
+                <p><a (click)="translate('en-ru','answers',obj.id)">{{ i18n?.translate }}</a></p>
+
+        </div>
+        <div class="col-md-6">
+                EN:<textarea [(ngModel)]='obj.question_en' type="text" class="form-control" ></textarea> 
+                <p><a (click)="translate('ru-en', 'question', obj.id)">{{ i18n?.translate }}</a></p>
+                <br />
+                <input [(ngModel)]='obj.answers_en' type="text" class="form-control" /> 
+                <p><a (click)="translate('ru-en', 'answers', obj.id)">{{ i18n?.translate }}</a></p>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6">
+            {{i18n?.level}}: <input [(ngModel)]='obj.level' type="text" class="form-control" />
+        </div>      
+        <div class="col-md-6">
+            {{i18n?.category}}:
+            <select [(ngModel)]='obj.theme_id'>
+                <option *ngFor="let t of themes" [ngValue]="t.id">{{ t.name }}</option>
+            </select>
+        </div>
+                
+    </div> 
+
+    <div class="form-group">
+            <div class="col-sm-12">
+                    <button class="btn btn-success float-left" (click)="submitForm()" >{{i18n?.save}}</button>
+            </div>
+        </div>
+
+    
+</div>

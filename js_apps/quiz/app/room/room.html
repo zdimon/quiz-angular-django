@@ -1,0 +1,139 @@
+
+    <nav class="navbar" style="margin-bottom: 0px">
+        <div class="container">
+          <div class="navbar-header">
+
+                <ul class="nav navbar-nav">
+                        <li>
+                            <p>
+                                {{i18n?.subject}}: &nbsp;<strong>{{ room?.name }}</strong> 
+                                {{i18n?.total_questions}}:&nbsp;<strong>{{ room?.cnt_questions }} </strong>
+                                {{i18n?.current_question }}&nbsp;<strong>{{ room?.current_question_number }} </strong>
+                                
+                            </p>
+                        </li>
+                        <!--
+                        <li>
+                                <a class="btn" routerLink="/index"> Home </a>
+                        </li>
+                        -->
+                        <li></li>
+                        
+                </ul>
+                <div class="lang_panel">
+                        <a (click)="toggleLang('ru')" [class.bold]="lang_ru">Russian</a> <input  type="checkbox" [(ngModel)]='lang_ru'> 
+                        <a (click)="toggleLang('en')"  [class.bold]="lang_en">English</a> <input type="checkbox" [(ngModel)]='lang_en'>
+                </div>
+
+
+            
+          </div>
+          
+
+        </div>
+      </nav> 
+
+
+<div class="container">
+        <router-outlet></router-outlet>
+        <div class="row winblock"  *ngIf="room?.is_done">
+            {{ i18n.quiz_ended }}
+
+             <h2>Победитель: {{ winner.name }}</h2>
+             <img src="{{ winner.avatar }}" />
+
+        </div>
+        
+        <div class="row"  *ngIf="room?.is_done == false">
+           
+
+            <div class="col-sm-8">
+                
+
+                <div class="chatbody" #scrollMe>
+
+                    
+                    <div class="chat_message" *ngFor="let m of room?.messages; let odd = odd" [class.odd]="odd">
+                        <p><span class="username">{{ m.user.name }}</span> <span class="time">{{ m.created_at }}</span></p>
+                        <div class="chat_text {{ m.is_right }}">
+                            <span *ngIf="m.is_service==false">
+                                <span *ngIf="m.is_right==false"><img src="/static/image/f.png" /></span>
+                                <span *ngIf="m.is_right==true"><img src="/static/image/t.png" /></span>
+                            </span>
+                            <p [innerHTML]="m.text"></p>
+                            <p *ngIf="lang_ru" [innerHTML]="m.question_ru"></p>
+                            <p *ngIf="lang_en" [innerHTML]="m.question_en"></p>
+                        </div>
+                    </div>
+                   
+                    
+
+                </div>
+
+                    <div class="row" class="current_question" [hidden]="is_first_question==false">
+                            <!-- <p> {{ i18n?.current_question }}: </p> -->
+                            <p *ngIf="lang_ru"> {{ room?.question_text_ru }} </p>
+                            <p *ngIf="lang_en"> {{ room?.question_text_en }} </p>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-xs-8" >
+                        <input  #inputBox (keypress)="keyPressHandler($event.keyCode)" type="text" [(ngModel)]='text_message' placeholder="type" class="form-control" required autofocus />
+                        <div class="lastmsg">{{ i18n?.enter_help }}</div>
+                        <!-- <div class="lastmsg"><a (click)="getQuestion()" href="#">get</a></div> -->
+                    </div>
+                    <!--
+                    <div class="col-xs-2">
+                        <button (click)="submit()" class="btn btn-info btn-block">Отправить</button> 
+                        
+                    </div>
+                    -->
+                    <div class="col-xs-4" [hidden]="show_next==false">
+                        <button (click)="nextQuestion()" class="btn btn-success">{{ i18n?.next }}</button>
+                        
+                    </div>
+                    </div>
+
+            </div>
+
+
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="participants">
+                        <h3 class="display-3">{{ i18n?.participants }}</h3>
+
+                        <a 
+                           *ngFor="let u of room.users | sort : ['score']" 
+                           href="#" 
+                           (click)="selectUser(u.id)" 
+                           [ngClass]="{'selected': u.isSelected }"
+                            class="chatperson">
+
+                            <span class="chatimg">
+                                <img src="{{ u.avatar }}" alt="" />
+                            </span>
+                            <div class="namechat" >
+                                <div class="pname">{{ u.name }}</div>
+                                <div class="lastmsg">rating: {{ u.rating }}</div>
+                            </div>
+                            <div class="score">{{ u.score }}</div>
+                        </a>                
+                    </div>  
+                </div>
+                <div class="row">
+                    <!--
+                        <div class="btn-group col-sm-12" >
+                            <button class="btn btn-danger disabled">Block</button>
+                            <button class="btn btn-warning disabled">Complain</button>
+                            <button class="btn btn-info  disabled">Info</button>
+                        </div>
+                    -->
+                </div>
+                  
+            </div>
+
+
+            
+        </div>
+    </div>
+

@@ -1,0 +1,31 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans 'Preview' %}</title>
+    <script type="text/javascript" src="/static/swfobject.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function()
+
+	{
+        var flashVars = {
+            streamer: 'rtmp://{{ server }}/vod',
+            file:'{{ lesson.file_name }}'
+        };
+        var params = {};
+        params.allowfullscreen = "true";
+        var attributes = {};
+        swfobject.embedSWF("/static/RtmpPlayer.swf", "rtmp-publisher", "800", "600", "9.0.0", null, flashVars, params, attributes);
+
+
+    }
+    </script>
+</head>
+<body>
+    <p><strong>{% trans 'Press play to start watching!' %}</strong></p>
+    <div id="rtmp-publisher">
+        <p>Flash not installed</p>
+    </div>
+</body>
+</html>

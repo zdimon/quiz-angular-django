@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+
+{% block bredcrumbs %} {% endblock %}
+
+{% block title %} Online courses {% endblock %}
+
+{% block content %}
+
+<div class="col-md-12">
+
+
+<div class="well">
+
+   <div align="center">
+    <a  href="{% url 'add-me-to-course' course_id=course.id %}" class="btn theme-btn" id="registration_save">{% trans 'Subscribe' %}</a>
+   </div>
+
+
+ <h2>{{ course.name }}</h2>
+
+
+
+ {{ course.requirements|safe }}
+
+   <div align="center">
+    <a  href="{% url 'add-me-to-course' course_id=course.id %}" class="btn theme-btn" id="registration_save">{% trans 'Subscribe' %}</a>
+   </div>
+
+
+  <h3> {% trans 'Lessons' %} </h3>
+
+    {% for l in course.lesson_set.all %}
+
+     <b> {{ forloop.counter }}. {{ l.name }} </b>
+        <p> {{ l.desc|safe }} </p>
+
+    {% endfor %}
+
+
+</div>
+   
+    
+
+
+{% endblock %}
+

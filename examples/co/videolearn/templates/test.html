@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RTMP Player</title>
+    <script type="text/javascript" src="/static/swfobject.js"></script>
+    <script type="text/javascript">
+
+        window.onload = function()
+
+	{
+        var flashVars = {
+            streamer: 'rtmp://localhost/vod',
+            file:'test'
+        };
+        var params = {};
+        params.allowfullscreen = "true";
+        var attributes = {};
+        swfobject.embedSWF("/static/RtmpPlayer.swf", "rtmp-publisher", "1920", "1080", "9.0.0", null, flashVars, params, attributes);
+
+    }
+    </script>
+</head>
+<body>
+    <div id="rtmp-publisher">
+        <p>Flash not installed</p>
+    </div>
+</body>
+</html>

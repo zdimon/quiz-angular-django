@@ -1,0 +1,875 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-30 08:49+0000\n"
+"PO-Revision-Date: 2015-11-20 08:26+0000\n"
+"Last-Translator: Dmitry Zharikov <sss@sdss.ss>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
+
+#: examples/co/ajax_upload/models.py:8
+#: examples/co/static/django-ajax-upload-widget/ajax_upload/models.py:8
+msgid "creation date"
+msgstr "Дата создания"
+
+#: examples/co/ajax_upload/models.py:9
+#: examples/co/static/django-ajax-upload-widget/ajax_upload/models.py:9
+msgid "file"
+msgstr "файл"
+
+#: examples/co/ajax_upload/models.py:13
+#: examples/co/static/django-ajax-upload-widget/ajax_upload/models.py:13
+msgid "uploaded file"
+msgstr "файл загружен"
+
+#: examples/co/ajax_upload/models.py:14
+#: examples/co/static/django-ajax-upload-widget/ajax_upload/models.py:14
+msgid "uploaded files"
+msgstr "загруженные файлы"
+
+#: examples/co/ajax_upload/tests/tests.py:56
+#: examples/co/static/django-ajax-upload-widget/ajax_upload/tests/tests.py:56
+msgid "This field is required."
+msgstr "Это поле обязательно для заполнения."
+
+#: examples/co/ajax_upload/tests/tests.py:108
+#: examples/co/ajax_upload/widgets.py:57
+#: examples/co/static/django-ajax-upload-widget/ajax_upload/tests/tests.py:108
+#: examples/co/static/django-ajax-upload-widget/ajax_upload/widgets.py:57
+msgid "File path not allowed:"
+msgstr "Путь к файлу не допускается:"
+
+#: examples/co/co/settings.py:32 examples/co/templates/base.html:118
+msgid "Russian"
+msgstr "Русский"
+
+#: examples/co/co/settings.py:33 examples/co/templates/base.html:126
+msgid "English"
+msgstr "Английский"
+
+#: examples/co/course/models.py:13 examples/co/course/models.py:44
+#: examples/co/course/models.py:80
+#: examples/co/course/templates/courses_list.html:36
+#: examples/co/course/templates/courses_list.html:54
+#: examples/co/main/templates/profile.html:211
+#: examples/co/videolearn/models.py:18 examples/co/videolearn/models.py:63
+#: examples/co/videolearn/models.py:136
+#: examples/co/videolearn/templates/library.html:46
+#: examples/co/videolearn/templates/list_vcourse.html:79
+#: examples/co/videolearn/templates/show_audio.html:38
+#: examples/co/videolearn/templates/vcourse_detail.html:30
+msgid "Name"
+msgstr "Название"
+
+#: examples/co/course/models.py:14 examples/co/course/models.py:45
+#: examples/co/videolearn/models.py:19 examples/co/videolearn/models.py:64
+#: examples/co/videolearn/models.py:137
+msgid "Description"
+msgstr "Описание"
+
+#: examples/co/course/models.py:15 examples/co/videolearn/models.py:20
+msgid "Requirements"
+msgstr "Требования"
+
+#: examples/co/course/models.py:16 examples/co/course/models.py:49
+#: examples/co/videolearn/models.py:21 examples/co/videolearn/models.py:66
+#: examples/co/videolearn/models.py:143
+msgid "Owner"
+msgstr "Владелец"
+
+#: examples/co/course/models.py:17 examples/co/course/models.py:50
+#: examples/co/course/models.py:134
+#: examples/co/course/templates/courses_list.html:35
+#: examples/co/course/templates/courses_list.html:53
+#: examples/co/videolearn/models.py:22 examples/co/videolearn/models.py:77
+#: examples/co/videolearn/models.py:160
+msgid "Image"
+msgstr "Изображения"
+
+#: examples/co/course/models.py:19 examples/co/course/models.py:46
+#: examples/co/videolearn/models.py:65
+msgid "Is main?"
+msgstr "Является главным?"
+
+#: examples/co/course/models.py:47
+msgid "Is camera on?"
+msgstr "Камера активна?"
+
+#: examples/co/course/models.py:52 examples/co/videolearn/models.py:67
+#: examples/co/videolearn/models.py:139
+#: examples/co/videolearn/templates/a_course_list.html:12
+#: examples/co/videolearn/templates/a_material_list.html:10
+#: examples/co/videolearn/templates/list_vcourse.html:56
+msgid "Course"
+msgstr "Курс"
+
+#: examples/co/course/models.py:53
+msgid "Is runing?"
+msgstr "Активный?"
+
+#: examples/co/course/models.py:81 examples/co/course/models.py:174
+#: examples/co/liqpay/models.py:12 examples/co/videolearn/models.py:186
+#: examples/co/videolearn/templates/a_material_list.html:11
+msgid "Lesson"
+msgstr "Урок"
+
+#: examples/co/course/models.py:87 examples/co/course/models.py:181
+msgid "Text adding"
+msgstr "Добавление текста"
+
+#: examples/co/course/models.py:88 examples/co/course/models.py:182
+msgid "Text replacing"
+msgstr "Текст замены"
+
+#: examples/co/course/models.py:89 examples/co/course/models.py:98
+#: examples/co/course/models.py:183 examples/co/course/models.py:192
+msgid "Image file"
+msgstr "Файл образа"
+
+#: examples/co/course/models.py:90 examples/co/course/models.py:99
+#: examples/co/course/models.py:184 examples/co/course/models.py:193
+msgid "Image url"
+msgstr "URL-адрес изображения"
+
+#: examples/co/course/models.py:91 examples/co/course/models.py:185
+msgid "Clear"
+msgstr "Ясно"
+
+#: examples/co/course/models.py:93 examples/co/course/models.py:187
+msgid "Type of event"
+msgstr "Тип события"
+
+#: examples/co/course/models.py:100 examples/co/course/models.py:173
+#: examples/co/course/models.py:194
+msgid "Text"
+msgstr "Текст"
+
+#: examples/co/course/models.py:101 examples/co/course/models.py:195
+msgid "Topic"
+msgstr "Тема"
+
+#: examples/co/course/models.py:104 examples/co/course/models.py:198
+msgid "Text size"
+msgstr "Текст"
+
+#: examples/co/course/models.py:105 examples/co/course/models.py:199
+msgid "Text color"
+msgstr "Цвет текста"
+
+#: examples/co/course/models.py:106 examples/co/course/models.py:200
+msgid "Text align"
+msgstr "Добавление текста"
+
+#: examples/co/course/models.py:138
+msgid "Auto publish"
+msgstr "Автоматическая публикация"
+
+#: examples/co/course/templates/_lesson_for_student.html:17
+#: examples/co/course/templates/lesson_for_student.html:17
+msgid "PARTICIPANTS"
+msgstr "Участники"
+
+#: examples/co/course/templates/_lesson_for_student.html:30
+msgid "Write board"
+msgstr "Доска"
+
+#: examples/co/course/templates/_lesson_for_student.html:31
+#: examples/co/course/templates/lesson_for_student.html:78
+msgid "YES"
+msgstr "Да"
+
+#: examples/co/course/templates/_lesson_for_student.html:32
+#: examples/co/course/templates/lesson_for_student.html:79
+msgid "NO"
+msgstr "Нет"
+
+#: examples/co/course/templates/_lesson_for_student.html:33
+#: examples/co/course/templates/lesson_for_student.html:80
+msgid "I have got it."
+msgstr "Я понял."
+
+#: examples/co/course/templates/_lesson_for_student.html:34
+#: examples/co/course/templates/lesson_for_student.html:81
+msgid "Can you be more specific please!"
+msgstr "А можно поточнее пожалуйста!"
+
+#: examples/co/course/templates/_lesson_for_student.html:35
+#: examples/co/course/templates/lesson_for_student.html:82
+msgid "I dont understand!"
+msgstr "Я не понимаю!"
+
+#: examples/co/course/templates/_lesson_for_student.html:37
+#: examples/co/course/templates/lesson_for_student.html:84
+msgid "Thank you very match."
+msgstr "Спасибо."
+
+#: examples/co/course/templates/_lesson_for_student.html:38
+#: examples/co/course/templates/lesson_for_student.html:85
+msgid "I have a question!"
+msgstr "У меня есть вопрос."
+
+#: examples/co/course/templates/_lesson_for_student.html:44
+#: examples/co/course/templates/lesson_for_student.html:91
+msgid "Camera is disabled"
+msgstr "Камера отключена"
+
+#: examples/co/course/templates/_lesson_for_student.html:51
+#: examples/co/course/templates/lesson_for_student.html:98
+msgid "Chat"
+msgstr "Чат"
+
+#: examples/co/course/templates/_lesson_for_student.html:58
+#: examples/co/course/templates/lesson_for_student.html:105
+msgid "Send message"
+msgstr "Отправить сообщение"
+
+#: examples/co/course/templates/course_detail.html:18
+#: examples/co/course/templates/course_detail.html:29
+msgid "Subscribe"
+msgstr "Подписаться"
+
+#: examples/co/course/templates/course_detail.html:33
+#: examples/co/course/templates/courses_list.html:38
+#: examples/co/main/templates/index.html:49
+#: examples/co/videolearn/templates/a_course_list.html:13
+#: examples/co/videolearn/templates/library.html:40
+#: examples/co/videolearn/templates/list_vcourse.html:57
+msgid "Lessons"
+msgstr "Урок"
+
+#: examples/co/course/templates/courses_list.html:29
+#: examples/co/main/templates/profile.html:169
+msgid "List of your courses"
+msgstr "Войти"
+
+#: examples/co/course/templates/courses_list.html:37
+#: examples/co/course/templates/courses_list.html:55
+msgid "Is active"
+msgstr "Активен"
+
+#: examples/co/course/templates/courses_list.html:39
+#: examples/co/course/templates/courses_list.html:56
+msgid "Actions"
+msgstr "Действия"
+
+#: examples/co/course/templates/courses_list.html:67
+#: examples/co/course/templates/edit_course.html:95
+#: examples/co/course/templates/lesson_edit.html:143
+#: examples/co/course/templates/lesson_edit.html:157
+msgid "Sure?"
+msgstr "Уверен?"
+
+#: examples/co/course/templates/courses_list.html:67
+msgid "Delete lesson"
+msgstr "Урок"
+
+#: examples/co/course/templates/courses_list.html:68
+#: examples/co/course/templates/image_add.html:14
+#: examples/co/course/templates/lesson_edit.html:35
+#: examples/co/main/templates/profile.html:159
+msgid "Edit lesson"
+msgstr "Редактирование урока"
+
+#: examples/co/course/templates/courses_list.html:69
+#: examples/co/course/templates/lesson_for_owner.html:41
+#: examples/co/main/templates/profile.html:157
+msgid "Start lesson"
+msgstr "Начать урок"
+
+#: examples/co/course/templates/courses_list.html:75
+#: examples/co/course/templates/create_lesson.html:30
+#: examples/co/course/templates/lesson_edit.html:55
+msgid "Create lesson"
+msgstr "Урок"
+
+#: examples/co/course/templates/courses_list.html:78
+#: examples/co/course/templates/edit_course.html:29
+msgid "Edit course"
+msgstr "Мои курсы"
+
+#: examples/co/course/templates/create_course.html:29
+msgid "Create course"
+msgstr "Активные курсы"
+
+#: examples/co/course/templates/create_course.html:91
+#: examples/co/course/templates/create_lesson.html:75
+#: examples/co/course/templates/edit_course.html:92
+#: examples/co/course/templates/lesson_edit.html:105
+#: examples/co/main/templates/profile.html:127
+#: examples/co/videolearn/templates/edit_varticle.html:107
+#: examples/co/videolearn/templates/edit_vcourse.html:119
+#: examples/co/videolearn/templates/edit_vlesson.html:108
+msgid "Save"
+msgstr "Сохранить"
+
+#: examples/co/course/templates/create_lesson.html:30
+#: examples/co/course/templates/lesson_edit.html:55
+msgid "course"
+msgstr "Курс"
+
+#: examples/co/course/templates/edit_course.html:95
+msgid "Delete course"
+msgstr "Активные курсы"
+
+#: examples/co/course/templates/flash_cam_student.html:34
+#: examples/co/course/templates/flash_cam_student.html:38
+#: examples/co/course/templates/lesson_for_owner.html:88
+#: examples/co/course/templates/lesson_for_owner.html:94
+msgid "Off"
+msgstr "Выкл."
+
+#: examples/co/course/templates/flash_cam_student.html:36
+#: examples/co/course/templates/lesson_for_owner.html:86
+#: examples/co/course/templates/lesson_for_owner.html:92
+msgid "On"
+msgstr "Вкл."
+
+#: examples/co/course/templates/flash_cam_student.html:44
+msgid "Microphone enabled"
+msgstr "Микрофон включен"
+
+#: examples/co/course/templates/flash_cam_student.html:46
+msgid "Microphone disabled"
+msgstr "Микрофон отключен"
+
+#: examples/co/course/templates/lesson_edit.html:123
+msgid "Add image"
+msgstr "Добавить изображение"
+
+#: examples/co/course/templates/lesson_edit.html:142
+msgid "Move all to incubator"
+msgstr "Переместить все в инкубатор"
+
+#: examples/co/course/templates/lesson_edit.html:143
+#: examples/co/course/templates/lesson_edit.html:157
+msgid "Delete all"
+msgstr "Удалить"
+
+#: examples/co/course/templates/lesson_edit.html:144
+msgid "Events"
+msgstr "События"
+
+#: examples/co/course/templates/lesson_edit.html:156
+msgid "Move all to events"
+msgstr "Переместить в события"
+
+#: examples/co/course/templates/lesson_edit.html:158
+#: examples/co/course/templates/lesson_for_owner.html:66
+msgid "Incubator"
+msgstr "Инкубатор"
+
+#: examples/co/course/templates/lesson_for_owner.html:43
+msgid "Stop lesson"
+msgstr "Начать урок"
+
+#: examples/co/course/templates/lesson_for_owner.html:110
+msgid "Small"
+msgstr "Маленький"
+
+#: examples/co/course/templates/lesson_for_owner.html:111
+msgid "Middle"
+msgstr "Средний"
+
+#: examples/co/course/templates/lesson_for_owner.html:112
+msgid "Big"
+msgstr "Большой"
+
+#: examples/co/course/templates/lesson_for_owner.html:113
+msgid "Very big"
+msgstr "Очень большой"
+
+#: examples/co/course/templates/lesson_for_owner.html:117
+msgid "Green"
+msgstr "Зеленый"
+
+#: examples/co/course/templates/lesson_for_owner.html:118
+msgid "Yellow"
+msgstr "Желтый"
+
+#: examples/co/course/templates/lesson_for_owner.html:119
+msgid "Red"
+msgstr "Красный"
+
+#: examples/co/course/templates/lesson_for_owner.html:120
+msgid "Blue"
+msgstr "Синий"
+
+#: examples/co/course/templates/lesson_for_owner.html:124
+msgid "Left"
+msgstr "Слева"
+
+#: examples/co/course/templates/lesson_for_owner.html:125
+msgid "Center"
+msgstr "По центру"
+
+#: examples/co/course/templates/lesson_for_owner.html:126
+msgid "Right"
+msgstr "Справа"
+
+#: examples/co/course/templates/lesson_for_owner.html:132
+msgid "Replace"
+msgstr "Заменить"
+
+#: examples/co/course/templates/lesson_for_owner.html:133
+msgid "Add"
+msgstr "Добавить"
+
+#: examples/co/course/templates/lesson_running_list.html:8
+msgid "Join"
+msgstr "Присоединиться"
+
+#: examples/co/course/templates/lesson_running_list.html:15
+msgid "There are no active lessons at this moment."
+msgstr "Нет активных уроков в этот момент."
+
+#: examples/co/course/templates/my_cam.html:40
+msgid "Save your pictrure"
+msgstr "Сохранить рисунок"
+
+#: examples/co/course/views.py:90
+msgid "Lesson was saved!"
+msgstr "Урок был сохранен!"
+
+#: examples/co/course/views.py:197
+msgid "You are already subscribed."
+msgstr "Вы уже подписаны."
+
+#: examples/co/course/views.py:208
+msgid "You was subscribed successfully."
+msgstr "Вы были успешно подписаны."
+
+#: examples/co/course/views.py:234
+msgid "New course was created!"
+msgstr "Новый курс был создан!"
+
+#: examples/co/course/views.py:246
+msgid "Course was deleted!"
+msgstr "Курс был удален!"
+
+#: examples/co/course/views.py:270
+msgid "New lesson was created!"
+msgstr "Новый урок был создан!"
+
+#: examples/co/course/views.py:284
+msgid "Lesson was deleted!"
+msgstr "Урок был удален!"
+
+#: examples/co/main/models.py:12
+msgid "Is teacher?"
+msgstr "Является учителем?"
+
+#: examples/co/main/models.py:13 examples/co/main/templates/cabinet.html:35
+msgid "Phone"
+msgstr "Телефон"
+
+#: examples/co/main/models.py:14
+msgid "About you"
+msgstr ""
+
+#: examples/co/main/models.py:14
+msgid "Tell us about your please."
+msgstr ""
+
+#: examples/co/main/models.py:15
+msgid "Is cam on?"
+msgstr "Камера активна?"
+
+#: examples/co/main/models.py:16
+msgid "Is mic on?"
+msgstr "Является главным?"
+
+#: examples/co/main/templates/cabinet.html:21
+#: examples/co/main/templates/profile.html:29
+msgid "My profile"
+msgstr "Мой профиль"
+
+#: examples/co/main/templates/cabinet.html:42
+msgid "About me"
+msgstr ""
+
+#: examples/co/main/templates/cabinet.html:51
+#, fuzzy
+#| msgid "My profile"
+msgid "Edit profile"
+msgstr "Мой профиль"
+
+#: examples/co/main/templates/cabinet.html:57
+msgid "My account"
+msgstr ""
+
+#: examples/co/main/templates/cabinet.html:60
+msgid "UAH"
+msgstr ""
+
+#: examples/co/main/templates/index.html:24
+#: examples/co/main/templates/index.html:39
+msgid "Active courses"
+msgstr "Активные курсы"
+
+#: examples/co/main/templates/index.html:55
+#: examples/co/videolearn/templates/buy_link.html:8
+msgid "View"
+msgstr ""
+
+#: examples/co/main/templates/index.html:65
+#, fuzzy
+msgid "Our teachers"
+msgstr "Является учителем?"
+
+#: examples/co/main/templates/profile.html:140
+msgid "Take a picture from your webcamera"
+msgstr "Сделать аватар с вашей веб-камеры"
+
+#: examples/co/main/templates/profile.html:152
+#: examples/co/videolearn/templates/a_course_list.html:5
+msgid "My courses"
+msgstr "Мои курсы"
+
+#: examples/co/main/templates/profile.html:158
+msgid "Clear lesson"
+msgstr "Урок"
+
+#: examples/co/main/templates/profile.html:161
+msgid "Enter to this lesson"
+msgstr "Зайти"
+
+#: examples/co/main/templates/profile.html:168
+msgid "Create new course"
+msgstr "Создать новый курс"
+
+#: examples/co/main/templates/profile.html:177
+msgid "Available courses"
+msgstr "Лучшие курсы"
+
+#: examples/co/main/templates/profile.html:193
+#: examples/co/videolearn/templates/list_vcourse.html:124
+#, fuzzy
+msgid "Create new video course"
+msgstr "Создать новый курс"
+
+#: examples/co/main/templates/profile.html:194
+#: examples/co/main/templates/profile.html:197
+#: examples/co/templates/base.html:81
+#: examples/co/videolearn/templates/edit_varticle.html:111
+#: examples/co/videolearn/templates/edit_vcourse.html:123
+#: examples/co/videolearn/templates/edit_vlesson.html:112
+#: examples/co/videolearn/templates/list_vcourse.html:43
+#, fuzzy
+msgid "My video courses"
+msgstr "Мои курсы"
+
+#: examples/co/main/templates/profile.html:204
+#, fuzzy
+msgid "Edit video cours"
+msgstr "Мои курсы"
+
+#: examples/co/main/templates/profile.html:205
+#: examples/co/videolearn/templates/a_course_list.html:91
+#: examples/co/videolearn/templates/list_vcourse.html:108
+msgid "Add lecture"
+msgstr ""
+
+#: examples/co/main/templates/profile.html:207
+#, fuzzy
+#| msgid "Actions"
+msgid "Lections"
+msgstr "Действия"
+
+#: examples/co/templates/base.html:71
+msgid "Mastery school"
+msgstr ""
+
+#: examples/co/templates/base.html:84
+msgid "My library"
+msgstr ""
+
+#: examples/co/templates/base.html:89
+msgid "Logout"
+msgstr "Выход"
+
+#: examples/co/templates/base.html:94
+#: examples/co/templates/registration/login.html:47
+msgid "Войти с помощью"
+msgstr "Войти с помощью"
+
+#: examples/co/templates/base.html:106
+msgid "Sign in"
+msgstr "Вход"
+
+#: examples/co/templates/base.html:108
+#: examples/co/templates/registration/registration_form.html:27
+#: examples/co/templates/registration/registration_form.html:123
+msgid "Registration"
+msgstr "Регистрация"
+
+#: examples/co/templates/common/login_form.html:5
+msgid "Login ino your accounxt"
+msgstr "Войти"
+
+#: examples/co/templates/common/login_form.html:9
+msgid "Логин"
+msgstr "Логин"
+
+#: examples/co/templates/common/login_form.html:13
+msgid "Пароль"
+msgstr "Пароль"
+
+#: examples/co/templates/common/login_form.html:15
+msgid "Signup"
+msgstr "Регистрация"
+
+#: examples/co/templates/common/login_form.html:22
+msgid "Login"
+msgstr "Логин"
+
+#: examples/co/videolearn/models.py:16 examples/co/videolearn/models.py:68
+msgid "Video"
+msgstr ""
+
+#: examples/co/videolearn/models.py:16
+msgid "Audio"
+msgstr ""
+
+#: examples/co/videolearn/models.py:17
+msgid "Type"
+msgstr ""
+
+#: examples/co/videolearn/models.py:24 examples/co/videolearn/models.py:141
+#: examples/co/videolearn/models.py:157
+#, fuzzy
+#| msgid "Auto publish"
+msgid "Is published?"
+msgstr "Автоматическая публикация"
+
+#: examples/co/videolearn/models.py:25
+#, fuzzy
+#| msgid "Delete all"
+msgid "Deleted?"
+msgstr "Удалить"
+
+#: examples/co/videolearn/models.py:69 examples/co/videolearn/models.py:70
+#, fuzzy
+#| msgid "Is cam on?"
+msgid "Is converted?"
+msgstr "Камера активна?"
+
+#: examples/co/videolearn/models.py:71
+#, fuzzy
+#| msgid "Description"
+msgid "Error description"
+msgstr "Описание"
+
+#: examples/co/videolearn/models.py:72 examples/co/videolearn/models.py:144
+msgid "Is free?"
+msgstr ""
+
+#: examples/co/videolearn/models.py:76
+msgid "Is public?"
+msgstr ""
+
+#: examples/co/videolearn/models.py:80
+msgid "Number"
+msgstr ""
+
+#: examples/co/videolearn/models.py:138
+#, fuzzy
+#| msgid "Description"
+msgid "Description additional"
+msgstr "Описание"
+
+#: examples/co/videolearn/models.py:142 examples/co/videolearn/models.py:155
+msgid "Sound"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_course_list.html:24
+#: examples/co/videolearn/templates/list_vcourse.html:68
+msgid "Published"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_course_list.html:25
+#: examples/co/videolearn/templates/a_course_list.html:78
+#: examples/co/videolearn/templates/list_vcourse.html:69
+msgid "Are u sure?"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_course_list.html:34
+#: examples/co/videolearn/templates/list_vcourse.html:78
+msgid "Screenshot"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_course_list.html:35
+msgid "Info"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_course_list.html:36
+#: examples/co/videolearn/templates/a_course_list.html:69
+#: examples/co/videolearn/templates/list_vcourse.html:82
+#: examples/co/videolearn/templates/list_vcourse.html:95
+#: examples/co/videolearn/templates/show_audio.html:39
+msgid "Show"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_course_list.html:44
+#: examples/co/videolearn/templates/list_vcourse.html:80
+#, fuzzy
+#| msgid "Description"
+msgid "Duration"
+msgstr "Описание"
+
+#: examples/co/videolearn/templates/a_course_list.html:45
+#: examples/co/videolearn/templates/a_material_list.html:13
+#: examples/co/videolearn/templates/library.html:48
+#: examples/co/videolearn/templates/list_vcourse.html:81
+#: examples/co/videolearn/templates/vcourse_detail.html:32
+msgid "Price"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_course_list.html:46
+msgid "Articles"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_course_list.html:58
+#, fuzzy
+#| msgid "Add image"
+msgid "Add article"
+msgstr "Добавить изображение"
+
+#: examples/co/videolearn/templates/a_material_list.html:5
+#: examples/co/videolearn/templates/vcourse_detail.html:24
+msgid "Lectures"
+msgstr ""
+
+#: examples/co/videolearn/templates/a_material_list.html:12
+#: examples/co/videolearn/templates/library.html:47
+#: examples/co/videolearn/templates/vcourse_detail.html:31
+msgid "Time"
+msgstr ""
+
+#: examples/co/videolearn/templates/buy_link.html:3
+msgid "Buy"
+msgstr ""
+
+#: examples/co/videolearn/templates/buy_link.html:5
+msgid "Test buy"
+msgstr ""
+
+#: examples/co/videolearn/templates/edit_varticle.html:29
+#, fuzzy
+msgid "New/edit article"
+msgstr "Мои курсы"
+
+#: examples/co/videolearn/templates/edit_vcourse.html:29
+#, fuzzy
+msgid "New/edit course"
+msgstr "Мои курсы"
+
+#: examples/co/videolearn/templates/edit_vlesson.html:29
+#, fuzzy
+msgid "New/edit lecture"
+msgstr "Мои курсы"
+
+#: examples/co/videolearn/templates/forbidden.html:32
+msgid "Sorry but you did not pay for watching"
+msgstr ""
+
+#: examples/co/videolearn/templates/library.html:23
+msgid "Library"
+msgstr ""
+
+#: examples/co/videolearn/templates/list_vcourse.html:28
+msgid "Show video"
+msgstr ""
+
+#: examples/co/videolearn/templates/list_vcourse.html:69
+#, fuzzy
+#| msgid "Delete all"
+msgid "Delete"
+msgstr "Удалить"
+
+#: examples/co/videolearn/templates/list_vcourse.html:94
+msgid "Edit"
+msgstr ""
+
+#: examples/co/videolearn/templates/list_vcourse.html:99
+#: examples/co/videolearn/templates/preview.html:5
+msgid "Preview"
+msgstr ""
+
+#: examples/co/videolearn/templates/preview.html:26
+#: examples/co/videolearn/templates/show_video.html:48
+msgid "Press play to start watching!"
+msgstr ""
+
+#: examples/co/videolearn/templates/show_varticle.html:32
+msgid "Content"
+msgstr ""
+
+#: examples/co/videolearn/views.py:130
+#, fuzzy
+msgid "Course has been saved!"
+msgstr "Курс был удален!"
+
+#: examples/co/videolearn/views.py:155
+#, fuzzy
+msgid "Lecture has been saved!"
+msgstr "Курс был удален!"
+
+#: examples/co/videolearn/views.py:176
+#, fuzzy
+#| msgid "Lesson was deleted!"
+msgid "Lesson deleted!"
+msgstr "Урок был удален!"
+
+#: examples/co/videolearn/views.py:178 examples/co/videolearn/views.py:232
+msgid "Error!"
+msgstr ""
+
+#: examples/co/videolearn/views.py:201
+#, fuzzy
+msgid "Article has been saved!"
+msgstr "Курс был удален!"
+
+#: examples/co/videolearn/views.py:233
+#, fuzzy
+msgid "Course has been mark for deleting!"
+msgstr "Курс был удален!"
+
+#~ msgid "Wait some seconds."
+#~ msgstr "Подождите несколько секунд."
+
+#~ msgid ""
+#~ "Lesson <b> %s </b> from course <b> %s </b> just have been started. \n"
+#~ "                You can join to this lesson by following a button below. "
+#~ "<br>\n"
+#~ "                <a href=\"%s\" class=\"btn btn-success red\"> Join to "
+#~ "this lesson </a>"
+#~ msgstr ""
+#~ "Урок <b> %s </b> курса <b> %s </b> только что начался.\n"
+#~ "Вы можете присоединиться нажав на кнопку ниже. <br>\n"
+#~ "<a href=\"%s\" class=\"btn btn-success red\"> Присоединиться к уроку </a>"
+
+#~ msgid ""
+#~ "Lesson <b> %s </b> from course <b> %s </b> just have been stoped. \n"
+#~ "                Thank you for visiting us."
+#~ msgstr ""
+#~ "Урок <b> %s </b> курса <b> %s </b> был остановлен.\n"
+#~ "Спасибо за внимание."
+
+#~ msgid "Online Courses"
+#~ msgstr "Онлайн Курсы"
+
+#~ msgid "I"
+#~ msgstr "Я"

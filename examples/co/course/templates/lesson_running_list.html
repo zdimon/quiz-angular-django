@@ -1,0 +1,19 @@
+{% load i18n %}
+
+{% if lessons.count > 0 %}
+
+    <ul id="test_running_list">
+     {% for l in lessons %}
+        <li class="well"> {{ l.thumb }} {{ l.name }} 
+       <a class="btn theme-btn float-right" href="{{ l.get_absolute_url_for_student }}">{% trans 'Join' %}</a>
+
+    </li>
+     {% endfor %}
+    </ul>
+{% else %}
+    
+    <h3 align="center" style="color: red; font-weight: bold" class="well">{% trans 'There are no active lessons at this moment.' %}</h3>
+
+{% endif %}
+
+

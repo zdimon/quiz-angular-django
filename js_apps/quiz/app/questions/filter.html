@@ -1,0 +1,14 @@
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button (click)="submitFilter('ru','lang')" type="button" [class.btn-primary]="current_filter.lang=='ru'" class="btn">RU</button>
+    <button (click)="submitFilter('en','lang')" type="button" [class.btn-primary]="current_filter.lang=='en'" class="btn">EN</button>
+    <button (click)="submitFilter('ru-en','lang')" type="button" [class.btn-primary]="current_filter.lang=='ru-en'" class="btn">RU-EN</button>
+  </div>
+
+<ul class="filter">
+    <li *ngFor="let t of themes"> 
+        <a *ngIf="language=='ru'"  (click)="submitFilter(t.id,'theme')" [class.active]="t.id==current_filter.theme">{{ t.name_ru }}  </a>
+        <a *ngIf="language=='en'"  (click)="submitFilter(t.id,'theme')" > {{ t.name_en }} </a>
+    </li>
+</ul>
+
+
